@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="416d6878-9284-403f-9e42-13b0d7d1d3d4"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<style>
+
+</style>
+<title>Devlog — Lost Medium</title>
+<meta name="description" content="Devlog and writing from Lost Medium — how the games get made: systems, tooling, polish, and running a tiny studio.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%23005C45'/%3E%3Ctext x='50' y='71' font-family='Verdana,sans-serif' font-size='54' font-weight='bold' font-style='italic' fill='%23FFF8E8' text-anchor='middle'%3Elm%3C/text%3E%3C/svg%3E">
+<script src="06a46727-2057-4c3c-ac5c-5c9adb71e979"></script>
+<style>
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0;background:#FFF8E8;}
+</style>
+</helmet>
+<div style="font-family:'Mulish',system-ui,sans-serif;color:#24211A;background:#FFF8E8;min-height:100vh;overflow-x:hidden;-webkit-font-smoothing:antialiased;">
+  
+
+  <!-- NAV -->
+  <nav style="position:sticky;top:0;z-index:60;background:rgba(255,248,232,.92);backdrop-filter:blur(8px);border-bottom:2.5px solid #24211A;">
+    <div style="max-width:1180px;margin:0 auto;padding:13px 28px;display:flex;align-items:center;justify-content:space-between;gap:24px;">
+      <a href="index.html" style="display:flex;align-items:center;gap:11px;text-decoration:none;">
+        <span style="width:38px;height:38px;border-radius:11px;background:#005C45;border:2.5px solid #24211A;box-shadow:3px 3px 0 #24211A;display:grid;place-items:center;transform:rotate(-5deg);">
+          <span style="font-family:'Fredoka';font-weight:700;color:#FFF8E8;font-size:19px;line-height:1;transform:skewX(-7deg);">lm</span>
+        </span>
+        <span style="font-family:'Fredoka';font-weight:700;font-size:21px;letter-spacing:-.01em;color:#24211A;transform:skewX(-6deg);">lost <span style="color:#005C45;">medium</span></span>
+      </a>
+      <div style="display:flex;align-items:center;gap:18px;flex-wrap:wrap;justify-content:flex-end;">
+        <div style="display:flex;gap:18px;font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;">
+          <a href="index.html#work" style="color:#24211A;text-decoration:none;" style-hover="color:#005C45;">Work</a>
+          <a href="index.html#skills" style="color:#24211A;text-decoration:none;" style-hover="color:#005C45;">Skills</a>
+          <a href="index.html#about" style="color:#24211A;text-decoration:none;" style-hover="color:#005C45;">About</a>
+          <a href="Blog.dc.html" style="color:#005C45;text-decoration:none;border-bottom:2.5px solid #005C45;">Blog</a>
+        </div>
+        <a href="index.html#contact" style="font-family:'Fredoka';font-weight:600;font-size:15px;color:#FFF8E8;background:#005C45;border:2.5px solid #24211A;box-shadow:3px 3px 0 #24211A;border-radius:11px;padding:9px 18px;text-decoration:none;transition:transform .12s,box-shadow .12s;" style-hover="transform:translate(-2px,-2px);box-shadow:5px 5px 0 #24211A;">Hire me</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- MASTHEAD -->
+  <header style="max-width:1180px;margin:0 auto;padding:74px 28px 40px;">
+    <div style="font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#005C45;margin-bottom:14px;">Devlog · writing</div>
+    <h1 style="font-family:'Fredoka';font-weight:700;font-size:clamp(38px,6vw,68px);line-height:.98;letter-spacing:-.02em;margin:0 0 18px;max-width:840px;">Notes from the <span style="color:#005C45;background:#B0E66C;padding:0 .1em;border-radius:8px;box-shadow:4px 4px 0 rgba(36,33,26,.18);display:inline-block;transform:rotate(-1.2deg);">workshop.</span></h1>
+    <p style="font-size:clamp(16px,1.6vw,19px);line-height:1.6;max-width:560px;color:rgba(36,33,26,.72);margin:0;">How these games actually get made — the systems, the tooling, the polish, and the messy parts of running a tiny studio. Roughly one post a month.</p>
+  </header>
+
+  <!-- FEATURED POST -->
+  <section style="max-width:1180px;margin:0 auto;padding:20px 28px 10px;">
+    <a href="#" style="text-decoration:none;color:inherit;display:block;">
+      <article style="display:flex;flex-wrap:wrap;border:2.5px solid #24211A;border-radius:22px;overflow:hidden;background:#fff;box-shadow:6px 6px 0 #24211A;transition:transform .14s,box-shadow .14s;" style-hover="transform:translate(-3px,-3px);box-shadow:9px 9px 0 #24211A;">
+        <div style="flex:1 1 440px;min-width:300px;border-right:2.5px solid #24211A;position:relative;">
+          <span style="position:absolute;top:16px;left:16px;z-index:2;font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;background:#B0E66C;border:2px solid #24211A;border-radius:7px;padding:4px 9px;">Latest</span>
+          <image-slot id="blog_featured" shape="rect" placeholder="Featured post cover (16:9)" style="display:block;width:100%;aspect-ratio:16/10;background:#005C45;"></image-slot>
+        </div>
+        <div style="flex:1 1 320px;min-width:280px;padding:34px 34px 30px;display:flex;flex-direction:column;justify-content:center;">
+          <div style="font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:700;letter-spacing:.04em;color:rgba(36,33,26,.55);text-transform:uppercase;margin-bottom:14px;">May 2026 · 8 min read</div>
+          <h2 style="font-family:'Fredoka';font-weight:700;font-size:clamp(26px,3vw,36px);line-height:1.05;letter-spacing:-.01em;margin:0 0 14px;">Building a fully diegetic map in Hollow Tide</h2>
+          <p style="font-size:16px;line-height:1.62;color:rgba(36,33,26,.8);margin:0 0 20px;">No HUD, no pause menu — the player draws the world as they explore it. Here's the rendering trick and the design rules that kept it from being annoying.</p>
+          <div style="display:flex;gap:7px;flex-wrap:wrap;margin-bottom:22px;">
+            <span style="font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:700;text-transform:uppercase;background:#89CCFF;border:2px solid #24211A;border-radius:7px;padding:4px 9px;">Godot</span>
+            <span style="font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:700;text-transform:uppercase;background:#B0E66C;border:2px solid #24211A;border-radius:7px;padding:4px 9px;">Tools</span>
+            <span style="font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:700;text-transform:uppercase;color:#fff;background:#282F7D;border:2px solid #24211A;border-radius:7px;padding:4px 9px;">Design</span>
+          </div>
+          <span style="font-family:'Fredoka';font-weight:600;font-size:16px;color:#005C45;border-bottom:2.5px solid #005C45;align-self:flex-start;">Read the post →</span>
+        </div>
+      </article>
+    </a>
+  </section>
+
+  <!-- POST GRID -->
+  <section style="max-width:1180px;margin:0 auto;padding:36px 28px 70px;">
+    <div style="font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:rgba(36,33,26,.5);margin-bottom:26px;">All posts</div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(310px,1fr));gap:26px;">
+
+      <a href="#" style="text-decoration:none;color:inherit;">
+        <article style="border:2.5px solid #24211A;border-radius:18px;overflow:hidden;background:#fff;box-shadow:5px 5px 0 #24211A;height:100%;display:flex;flex-direction:column;transition:transform .14s,box-shadow .14s;" style-hover="transform:translate(-3px,-3px);box-shadow:8px 8px 0 #24211A;">
+          <image-slot id="blog_p1" shape="rect" placeholder="Cover" style="display:block;width:100%;aspect-ratio:16/9;background:#282F7D;border-bottom:2.5px solid #24211A;"></image-slot>
+          <div style="padding:20px;display:flex;flex-direction:column;flex:1;">
+            <div style="font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:700;letter-spacing:.04em;color:rgba(36,33,26,.5);text-transform:uppercase;margin-bottom:10px;">Apr 2026 · 6 min</div>
+            <h3 style="font-family:'Fredoka';font-weight:600;font-size:22px;line-height:1.12;margin:0 0 10px;">How we run a 5-person studio with no meetings</h3>
+            <p style="font-size:14.5px;line-height:1.55;color:rgba(36,33,26,.74);margin:0 0 16px;flex:1;">Async by default, written everything, and one weekly playtest. The cadence that keeps Lost Medium shipping.</p>
+            <div style="display:flex;gap:6px;flex-wrap:wrap;">
+              <span style="font-family:'JetBrains Mono',monospace;font-size:10.5px;font-weight:700;text-transform:uppercase;background:#B0E66C;border:2px solid #24211A;border-radius:6px;padding:3px 8px;">Studio</span>
+            </div>
+          </div>
+        </article>
+      </a>
+
+      <a href="#" style="text-decoration:none;color:inherit;">
+        <article style="border:2.5px solid #24211A;border-radius:18px;overflow:hidden;background:#fff;box-shadow:5px 5px 0 #24211A;height:100%;display:flex;flex-direction:column;transition:transform .14s,box-shadow .14s;" style-hover="transform:translate(-3px,-3px);box-shadow:8px 8px 0 #24211A;">
+          <image-slot id="blog_p2" shape="rect" placeholder="Cover" style="display:block;width:100%;aspect-ratio:16/9;background:#005C45;border-bottom:2.5px solid #24211A;"></image-slot>
+          <div style="padding:20px;display:flex;flex-direction:column;flex:1;">
+            <div style="font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:700;letter-spacing:.04em;color:rgba(36,33,26,.5);text-transform:uppercase;margin-bottom:10px;">Mar 2026 · 5 min</div>
+            <h3 style="font-family:'Fredoka';font-weight:600;font-size:22px;line-height:1.12;margin:0 0 10px;">Hand-tuning game feel: the 200ms rule</h3>
+            <p style="font-size:14.5px;line-height:1.55;color:rgba(36,33,26,.74);margin:0 0 16px;flex:1;">Why the gap between input and response is where a game lives or dies — and how I tune it by ear.</p>
+            <div style="display:flex;gap:6px;flex-wrap:wrap;">
+              <span style="font-family:'JetBrains Mono',monospace;font-size:10.5px;font-weight:700;text-transform:uppercase;color:#fff;background:#282F7D;border:2px solid #24211A;border-radius:6px;padding:3px 8px;">Design</span>
+            </div>
+          </div>
+        </article>
+      </a>
+
+      <a href="#" style="text-decoration:none;color:inherit;">
+        <article style="border:2.5px solid #24211A;border-radius:18px;overflow:hidden;background:#fff;box-shadow:5px 5px 0 #24211A;height:100%;display:flex;flex-direction:column;transition:transform .14s,box-shadow .14s;" style-hover="transform:translate(-3px,-3px);box-shadow:8px 8px 0 #24211A;">
+          <image-slot id="blog_p3" shape="rect" placeholder="Cover" style="display:block;width:100%;aspect-ratio:16/9;background:#89CCFF;border-bottom:2.5px solid #24211A;"></image-slot>
+          <div style="padding:20px;display:flex;flex-direction:column;flex:1;">
+            <div style="font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:700;letter-spacing:.04em;color:rgba(36,33,26,.5);text-transform:uppercase;margin-bottom:10px;">Feb 2026 · 9 min</div>
+            <h3 style="font-family:'Fredoka';font-weight:600;font-size:22px;line-height:1.12;margin:0 0 10px;">A data-driven weapon system in Unity</h3>
+            <p style="font-size:14.5px;line-height:1.55;color:rgba(36,33,26,.74);margin:0 0 16px;flex:1;">60+ modular parts from a handful of ScriptableObjects, plus the editor tooling that made it bearable.</p>
+            <div style="display:flex;gap:6px;flex-wrap:wrap;">
+              <span style="font-family:'JetBrains Mono',monospace;font-size:10.5px;font-weight:700;text-transform:uppercase;background:#B0E66C;border:2px solid #24211A;border-radius:6px;padding:3px 8px;">Code</span>
+            </div>
+          </div>
+        </article>
+      </a>
+
+      <a href="#" style="text-decoration:none;color:inherit;">
+        <article style="border:2.5px solid #24211A;border-radius:18px;overflow:hidden;background:#fff;box-shadow:5px 5px 0 #24211A;height:100%;display:flex;flex-direction:column;transition:transform .14s,box-shadow .14s;" style-hover="transform:translate(-3px,-3px);box-shadow:8px 8px 0 #24211A;">
+          <image-slot id="blog_p4" shape="rect" placeholder="Cover" style="display:block;width:100%;aspect-ratio:16/9;background:#24211A;border-bottom:2.5px solid #24211A;"></image-slot>
+          <div style="padding:20px;display:flex;flex-direction:column;flex:1;">
+            <div style="font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:700;letter-spacing:.04em;color:rgba(36,33,26,.5);text-transform:uppercase;margin-bottom:10px;">Jan 2026 · 7 min</div>
+            <h3 style="font-family:'Fredoka';font-weight:600;font-size:22px;line-height:1.12;margin:0 0 10px;">Shipping solo without burning out</h3>
+            <p style="font-size:14.5px;line-height:1.55;color:rgba(36,33,26,.74);margin:0 0 16px;flex:1;">Scope, milestones, and the rule I use to decide what never makes it into the build.</p>
+            <div style="display:flex;gap:6px;flex-wrap:wrap;">
+              <span style="font-family:'JetBrains Mono',monospace;font-size:10.5px;font-weight:700;text-transform:uppercase;background:#89CCFF;border:2px solid #24211A;border-radius:6px;padding:3px 8px;">Process</span>
+            </div>
+          </div>
+        </article>
+      </a>
+
+      <a href="#" style="text-decoration:none;color:inherit;">
+        <article style="border:2.5px solid #24211A;border-radius:18px;overflow:hidden;background:#fff;box-shadow:5px 5px 0 #24211A;height:100%;display:flex;flex-direction:column;transition:transform .14s,box-shadow .14s;" style-hover="transform:translate(-3px,-3px);box-shadow:8px 8px 0 #24211A;">
+          <image-slot id="blog_p5" shape="rect" placeholder="Cover" style="display:block;width:100%;aspect-ratio:16/9;background:#B0E66C;border-bottom:2.5px solid #24211A;"></image-slot>
+          <div style="padding:20px;display:flex;flex-direction:column;flex:1;">
+            <div style="font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:700;letter-spacing:.04em;color:rgba(36,33,26,.5);text-transform:uppercase;margin-bottom:10px;">Dec 2025 · 11 min</div>
+            <h3 style="font-family:'Fredoka';font-weight:600;font-size:22px;line-height:1.12;margin:0 0 10px;">Writing a 2D lighting pass from scratch</h3>
+            <p style="font-size:14.5px;line-height:1.55;color:rgba(36,33,26,.74);margin:0 0 16px;flex:1;">Normal maps, soft shadows, and a performance budget for an underwater world — in GLSL, step by step.</p>
+            <div style="display:flex;gap:6px;flex-wrap:wrap;">
+              <span style="font-family:'JetBrains Mono',monospace;font-size:10.5px;font-weight:700;text-transform:uppercase;color:#fff;background:#005C45;border:2px solid #24211A;border-radius:6px;padding:3px 8px;">Shaders</span>
+            </div>
+          </div>
+        </article>
+      </a>
+
+      <a href="#" style="text-decoration:none;color:inherit;">
+        <article style="border:2.5px solid #24211A;border-radius:18px;overflow:hidden;background:#fff;box-shadow:5px 5px 0 #24211A;height:100%;display:flex;flex-direction:column;transition:transform .14s,box-shadow .14s;" style-hover="transform:translate(-3px,-3px);box-shadow:8px 8px 0 #24211A;">
+          <image-slot id="blog_p6" shape="rect" placeholder="Cover" style="display:block;width:100%;aspect-ratio:16/9;background:#282F7D;border-bottom:2.5px solid #24211A;"></image-slot>
+          <div style="padding:20px;display:flex;flex-direction:column;flex:1;">
+            <div style="font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:700;letter-spacing:.04em;color:rgba(36,33,26,.5);text-transform:uppercase;margin-bottom:10px;">Nov 2025 · 8 min</div>
+            <h3 style="font-family:'Fredoka';font-weight:600;font-size:22px;line-height:1.12;margin:0 0 10px;">From game jam to Steam page in 6 weeks</h3>
+            <p style="font-size:14.5px;line-height:1.55;color:rgba(36,33,26,.74);margin:0 0 16px;flex:1;">Taking a 48-hour prototype to a wishlist-ready storefront, and the parts I'd skip next time.</p>
+            <div style="display:flex;gap:6px;flex-wrap:wrap;">
+              <span style="font-family:'JetBrains Mono',monospace;font-size:10.5px;font-weight:700;text-transform:uppercase;background:#89CCFF;border:2px solid #24211A;border-radius:6px;padding:3px 8px;">Release</span>
+            </div>
+          </div>
+        </article>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- SUBSCRIBE -->
+  <section style="background:#005C45;border-top:2.5px solid #24211A;border-bottom:2.5px solid #24211A;">
+    <div style="max-width:1180px;margin:0 auto;padding:64px 28px;text-align:center;color:#FFF8E8;">
+      <h2 style="font-family:'Fredoka';font-weight:700;font-size:clamp(26px,3.4vw,40px);line-height:1.05;letter-spacing:-.01em;margin:0 0 14px;">Get new devlogs in your inbox</h2>
+      <p style="font-size:16.5px;line-height:1.6;max-width:480px;margin:0 auto 26px;color:rgba(255,248,232,.82);">One email when something new goes up. No spam, no growth hacks — just the making-of.</p>
+      <form onsubmit="{{ noop }}" style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;max-width:480px;margin:0 auto;">
+        <input type="email" placeholder="you@studio.com" style="flex:1 1 240px;min-width:200px;font-family:'Mulish';font-size:16px;color:#24211A;background:#FFF8E8;border:2.5px solid #24211A;box-shadow:4px 4px 0 #24211A;border-radius:12px;padding:13px 16px;outline:none;">
+        <button type="submit" style="font-family:'Fredoka';font-weight:600;font-size:16px;color:#FFF8E8;background:#24211A;border:2.5px solid #24211A;box-shadow:4px 4px 0 rgba(0,0,0,.3);border-radius:12px;padding:13px 24px;cursor:pointer;transition:transform .12s;" style-hover="transform:translate(-2px,-2px);">Subscribe</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer style="background:#24211A;color:#FFF8E8;border-top:2.5px solid #24211A;padding:64px 28px 48px;text-align:center;overflow:hidden;">
+    <div style="font-family:'Fredoka';font-weight:700;font-size:clamp(64px,15vw,160px);line-height:.78;letter-spacing:-.02em;transform:skewX(-7deg);color:#FFF8E8;text-shadow:5px 5px 0 #005C45,10px 10px 0 rgba(0,0,0,.25);margin-bottom:30px;">
+      <div>Lost</div>
+      <div style="margin-left:.18em;">medium</div>
+    </div>
+    <div style="display:flex;gap:18px;justify-content:center;flex-wrap:wrap;margin-bottom:22px;font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;">
+      <a href="index.html#work" style="color:rgba(255,248,232,.8);text-decoration:none;" style-hover="color:#B0E66C;">Work</a>
+      <a href="index.html#about" style="color:rgba(255,248,232,.8);text-decoration:none;" style-hover="color:#B0E66C;">About</a>
+      <a href="index.html#contact" style="color:rgba(255,248,232,.8);text-decoration:none;" style-hover="color:#B0E66C;">Contact</a>
+    </div>
+    <div style="font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:700;letter-spacing:.05em;color:rgba(255,248,232,.55);text-transform:uppercase;">© 2026 Mateo Restrepo · Lost Medium · Solo work + studio work, shared gladly</div>
+  </footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script="">
+class Component extends DCLogic {
+  renderVals() {
+    return { noop: (e) => { e.preventDefault(); } };
+  }
+}
+</script>
+
+</body></html>
