@@ -1,0 +1,109 @@
+{
+  "hero": {
+    "badge": "Solo game developer · VR & mobile · open to work",
+    "heading": "Designer by profession, game developer",
+    "highlight": "by choice.",
+    "subcopy": "I'm Alejandro Endo — an interactive-media designer with 6 years in software and 3.5 focused on Unity. Since 2021 I've lived in VR, chasing the elusive craft of game feel across a shelf of solo-built games.",
+    "socials": [
+      { "label": "itch.io", "href": "https://alejandroendo.itch.io/", "external": true },
+      { "label": "Google Play", "href": "#", "external": true },
+      { "label": "LinkedIn", "href": "https://www.linkedin.com/in/alejandro-endo-5b5636129/", "external": true }
+    ]
+  },
+  "skills": {
+    "heading": "A designer's eye and a developer's toolbox.",
+    "subcopy": "Shipping solo means I've owned the full loop — from prototype to feel. I can drop into gameplay or systems, work comfortably in VR and mobile, and sweat the last 10% that makes a build satisfying.",
+    "categories": [
+      {
+        "title": "Engine & XR",
+        "items": ["Unity", "XR Toolkit", "Meta Quest SDK", "Android"]
+      },
+      {
+        "title": "Code",
+        "items": ["C#", "Shader Graph", "Git", "Design patterns"]
+      },
+      {
+        "title": "Disciplines",
+        "items": ["Gameplay", "Systems", "VR / XR", "Mobile", "Proc-gen"]
+      },
+      {
+        "title": "Craft",
+        "items": ["Game feel", "Prototyping", "UX", "Visual polish"]
+      }
+    ]
+  },
+  "about": {
+    "heading": "Designer first, developer always.",
+    "paragraphs": [
+      "I'm an interactive-media designer with a solid software-engineering background and 6 years of professional experience. For the last 3.5 I've specialised in Unity, mostly VR and mobile — and since 2021 I've poured my free time into side projects, honing gameplay dynamics and the elusive craft of game feel.",
+      "I recently graduated with honours from an MSc in Game Development at Universal Arts School, where I shipped several games as a solo developer. My goal is always the same: a final product that's captivating, satisfying, and genuinely enjoyable to play."
+    ],
+    "stats": [
+      { "value": "6", "label": "Years in software" },
+      { "value": "3.5", "label": "Years in Unity / VR" },
+      { "value": "7", "label": "Games shipped" }
+    ]
+  },
+  "employers": {
+    "heading": "Where I've worked",
+    "subcopy": "Teams and clients I've built software and interactive experiences for.",
+    "items": [
+      { "name": "Company One" },
+      { "name": "Company Two" },
+      { "name": "Company Three" },
+      { "name": "Company Four" }
+    ]
+  },
+  "studio": {
+    "title": "LOST MEDIUM",
+    "en": {
+      "label": "The studio",
+      "tagline": "A small game studio built with friends — where the solo work grows a team around it.",
+      "description": [
+        "Lost Medium is a tiny, tight-knit studio I co-founded. It's where a few of us pool our disciplines — design, code, art, audio — to make games that are bigger than any one of us could ship alone.",
+        "We care about the same things I chase solo: readable systems, tools that make the team faster, and the last 10% of polish that makes a game feel great to play."
+      ],
+      "founded": "Founded 2023",
+      "location": "Cali, Colombia",
+      "teamHeading": "The team",
+      "gamesHeading": "Games we've made",
+      "members": [
+        { "name": "Alejandro Endo", "role": "Co-founder · Gameplay & Tools" },
+        { "name": "Member Two", "role": "Art & Animation" },
+        { "name": "Member Three", "role": "Audio & Music" }
+      ]
+    },
+    "es": {
+      "label": "El estudio",
+      "tagline": "Un pequeño estudio de videojuegos hecho con amigos — donde el trabajo en solitario forma un equipo a su alrededor.",
+      "description": [
+        "Lost Medium es un estudio pequeño y unido que cofundé. Es donde varios juntamos nuestras disciplinas — diseño, código, arte, audio — para hacer juegos más grandes de lo que cualquiera podría sacar en solitario.",
+        "Nos importan las mismas cosas que persigo por mi cuenta: sistemas legibles, herramientas que hacen al equipo más rápido, y ese último 10% de pulido que hace que un juego se sienta genial."
+      ],
+      "founded": "Fundado en 2023",
+      "location": "Cali, Colombia",
+      "teamHeading": "El equipo",
+      "gamesHeading": "Juegos que hemos hecho",
+      "members": [
+        { "name": "Alejandro Endo", "role": "Cofundador · Gameplay y herramientas" },
+        { "name": "Member Two", "role": "Arte y animación" },
+        { "name": "Member Three", "role": "Audio y música" }
+      ]
+    }
+  },
+  "contact": {
+    "heading": "Need a solo dev who sweats the game feel?",
+    "subcopy": "I'm open to gameplay, systems, VR and mobile roles — remote or relocating. Let's make something that feels great to play.",
+    "primary": {
+      "label": "Message me on LinkedIn",
+      "href": "https://www.linkedin.com/in/alejandro-endo-5b5636129/",
+      "external": true
+    },
+    "resumeHref": "#",
+    "socials": [
+      { "label": "itch.io", "href": "https://alejandroendo.itch.io/", "external": true },
+      { "label": "Google Play", "href": "#", "external": true },
+      { "label": "LinkedIn", "href": "https://www.linkedin.com/in/alejandro-endo-5b5636129/", "external": true }
+    ]
+  }
+}

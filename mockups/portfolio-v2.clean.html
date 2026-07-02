@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="1ee63701-e79d-4af0-8ecf-b9402ad91f6f"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<style>/* cyrillic-ext */
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("f2b10792-2ad3-46b0-902c-2e8be967bb6c") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("1222cb59-0950-423c-927a-11eb7e3acb81") format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* greek */
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("cbef6a08-f510-4e4c-a82a-b273df89073e") format('woff2');
+  unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("d9b7d93d-d954-46eb-b45b-70cf83220d3d") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("4af420e4-acfd-4132-bcc3-db3245071671") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("e4abe697-8fb1-469d-8c69-7f47d7657702") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("f2b10792-2ad3-46b0-902c-2e8be967bb6c") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("1222cb59-0950-423c-927a-11eb7e3acb81") format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* greek */
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("cbef6a08-f510-4e4c-a82a-b273df89073e") format('woff2');
+  unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("d9b7d93d-d954-46eb-b45b-70cf83220d3d") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("4af420e4-acfd-4132-bcc3-db3245071671") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("e4abe697-8fb1-469d-8c69-7f47d7657702") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("f2b10792-2ad3-46b0-902c-2e8be967bb6c") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("1222cb59-0950-423c-927a-11eb7e3acb81") format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* greek */
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("cbef6a08-f510-4e4c-a82a-b273df89073e") format('woff2');
+  unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("d9b7d93d-d954-46eb-b45b-70cf83220d3d") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("4af420e4-acfd-4132-bcc3-db3245071671") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("e4abe697-8fb1-469d-8c69-7f47d7657702") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Mulish';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("d960b1c5-2ce0-4031-9b2f-f376706a551f") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Mulish';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("5308a971-0057-4340-8840-6857f1b17548") format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Mulish';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("15882fe2-c929-4925-9357-824138df6c0c") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Mulish';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("fe2a6756-57d5-48f2-9905-28a369023144") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Mulish';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("2f11d5e0-7cab-45eb-b996-5fb2fcd41d07") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Mulish';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("d960b1c5-2ce0-4031-9b2f-f376706a551f") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Mulish';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("5308a971-0057-4340-8840-6857f1b17548") format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Mulish';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("15882fe2-c929-4925-9357-824138df6c0c") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Mulish';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("fe2a6756-57d5-48f2-9905-28a369023144") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Mulish';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("2f11d5e0-7cab-45eb-b996-5fb2fcd41d07") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Mulish';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("d960b1c5-2ce0-4031-9b2f-f376706a551f") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Mulish';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("5308a971-0057-4340-8840-6857f1b17548") format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Mulish';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("15882fe2-c929-4925-9357-824138df6c0c") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Mulish';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("fe2a6756-57d5-48f2-9905-28a369023144") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Mulish';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("2f11d5e0-7cab-45eb-b996-5fb2fcd41d07") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Mulish';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("d960b1c5-2ce0-4031-9b2f-f376706a551f") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Mulish';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("5308a971-0057-4340-8840-6857f1b17548") format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Mulish';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("15882fe2-c929-4925-9357-824138df6c0c") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Mulish';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("fe2a6756-57d5-48f2-9905-28a369023144") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Mulish';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("2f11d5e0-7cab-45eb-b996-5fb2fcd41d07") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Space Grotesk';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("de0f3055-6704-4ae7-bf05-d19e5a46aa0f") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Space Grotesk';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("be08ec6d-b6a7-4c6f-be08-6a8aa3128613") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Space Grotesk';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("d2dd8f74-4459-4ada-9f4c-809910a54625") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Space Grotesk';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("de0f3055-6704-4ae7-bf05-d19e5a46aa0f") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Space Grotesk';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("be08ec6d-b6a7-4c6f-be08-6a8aa3128613") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Space Grotesk';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("d2dd8f74-4459-4ada-9f4c-809910a54625") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Space Grotesk';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("de0f3055-6704-4ae7-bf05-d19e5a46aa0f") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Space Grotesk';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("be08ec6d-b6a7-4c6f-be08-6a8aa3128613") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Space Grotesk';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("d2dd8f74-4459-4ada-9f4c-809910a54625") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+</style>
+<style>
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0;background:#EEEEEE;}
+</style>
+<script src="b635b529-0e99-4f41-a0eb-34066a18d00f"></script>
+</helmet>
+<div ref="{{ setRoot }}" style="font-family:'Mulish',system-ui,sans-serif;color:#1A1A1A;background:#EEEEEE;min-height:100vh;overflow-x:hidden;-webkit-font-smoothing:antialiased;">
+
+  <!-- NAV -->
+  <nav style="position:sticky;top:0;z-index:60;background:rgba(238,238,238,.86);backdrop-filter:blur(10px);border-bottom:1px solid #DDDDDD;">
+    <div style="max-width:1180px;margin:0 auto;padding:15px 28px;display:flex;align-items:center;justify-content:space-between;gap:24px;">
+      <a href="#top" style="display:flex;align-items:center;gap:11px;text-decoration:none;">
+        <span style="width:34px;height:34px;border-radius:9px;background:var(--accent,#CB2957);display:grid;place-items:center;">
+          <span style="font-family:'Space Grotesk';font-weight:700;color:#EEEEEE;font-size:16px;line-height:1;">ae</span>
+        </span>
+        <span style="font-family:'Space Grotesk';font-weight:700;font-size:19px;letter-spacing:-.01em;color:#1A1A1A;">alejandro <span style="color:var(--accent,#CB2957);">endo</span></span>
+      </a>
+      <div style="display:flex;align-items:center;gap:20px;flex-wrap:wrap;justify-content:flex-end;">
+        <div style="display:flex;gap:20px;font-family:'JetBrains Mono',monospace;font-size:12.5px;font-weight:500;text-transform:uppercase;letter-spacing:.06em;">
+          <a href="#work" style="color:#1A1A1A;text-decoration:none;" style-hover="color:var(--accent,#CB2957);">Work</a>
+          <a href="#skills" style="color:#1A1A1A;text-decoration:none;" style-hover="color:var(--accent,#CB2957);">Skills</a>
+          <a href="#about" style="color:#1A1A1A;text-decoration:none;" style-hover="color:var(--accent,#CB2957);">About</a>
+          <a href="#log" style="color:#1A1A1A;text-decoration:none;" style-hover="color:var(--accent,#CB2957);">Log</a>
+        </div>
+        <a href="#contact" style="font-family:'Space Grotesk';font-weight:600;font-size:14px;color:#EEEEEE;background:var(--accent,#CB2957);border-radius:9px;padding:9px 18px;text-decoration:none;transition:opacity .15s;" style-hover="opacity:.85;">Hire me</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header id="top" style="background:var(--hero-bg,#1A1A1A);color:var(--hero-ink,#EEEEEE);border-bottom:1px solid var(--hero-line,#2A2A2A);">
+    <div style="max-width:1180px;margin:0 auto;padding:80px 28px 88px;display:flex;flex-wrap:wrap;gap:56px;align-items:center;">
+      <div style="flex:1 1 440px;min-width:300px;">
+        <div style="font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--accent,#CB2957);margin-bottom:26px;">Solo game developer · VR &amp; mobile · open to work</div>
+        <h1 style="font-family:'Space Grotesk';font-weight:700;font-size:clamp(38px,6vw,66px);line-height:1.02;letter-spacing:-.025em;margin:0 0 24px;">Designer by profession, game developer <span style="color:var(--accent,#CB2957);">by choice.</span></h1>
+        <p style="font-size:clamp(16px,1.6vw,18.5px);line-height:1.62;max-width:540px;color:var(--hero-sub,rgba(238,238,238,.68));margin:0 0 34px;">I'm <strong style="color:var(--hero-ink,#EEEEEE);font-weight:700;">Alejandro Endo</strong> — an interactive-media designer with 6 years in software and 3.5 focused on Unity. Since 2021 I've lived in VR, chasing the elusive craft of <em>game feel</em> across a shelf of solo-built games.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:12px;margin-bottom:32px;">
+          <a href="#work" style="font-family:'Space Grotesk';font-weight:600;font-size:15px;color:#EEEEEE;background:var(--accent,#CB2957);border-radius:11px;padding:13px 24px;text-decoration:none;transition:opacity .15s;" style-hover="opacity:.88;">See my games →</a>
+          <a href="#contact" style="font-family:'Space Grotesk';font-weight:600;font-size:15px;color:var(--hero-ink,#EEEEEE);background:transparent;border:1px solid var(--hero-chip,rgba(238,238,238,.28));border-radius:11px;padding:13px 24px;text-decoration:none;transition:border-color .15s;" style-hover="border-color:var(--accent,#CB2957);">Download CV</a>
+        </div>
+        <div style="display:flex;flex-wrap:wrap;gap:9px;font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:500;letter-spacing:.03em;">
+          <a href="https://alejandroendo.itch.io/" target="_blank" style="color:var(--hero-ink,#EEEEEE);text-decoration:none;border:1px solid var(--hero-chip,rgba(238,238,238,.22));border-radius:8px;padding:7px 13px;" style-hover="border-color:var(--accent,#CB2957);color:var(--accent,#CB2957);">itch.io</a>
+          <a href="#" style="color:var(--hero-ink,#EEEEEE);text-decoration:none;border:1px solid var(--hero-chip,rgba(238,238,238,.22));border-radius:8px;padding:7px 13px;" style-hover="border-color:var(--accent,#CB2957);color:var(--accent,#CB2957);">Google Play</a>
+          <a href="https://www.linkedin.com/in/alejandro-endo-5b5636129/" target="_blank" style="color:var(--hero-ink,#EEEEEE);text-decoration:none;border:1px solid var(--hero-chip,rgba(238,238,238,.22));border-radius:8px;padding:7px 13px;" style-hover="border-color:var(--accent,#CB2957);color:var(--accent,#CB2957);">LinkedIn</a>
+        </div>
+      </div>
+      <div style="flex:0 1 340px;min-width:260px;display:flex;justify-content:center;position:relative;">
+        <div style="position:relative;width:300px;height:300px;">
+          <div style="position:absolute;top:16px;left:16px;width:300px;height:300px;border-radius:22px;background:var(--accent,#CB2957);"></div>
+          <image-slot id="ae_portrait" shape="rounded" radius="22" placeholder="Drop your portrait" style="position:relative;width:300px;height:300px;border:1px solid rgba(0,0,0,.15);border-radius:22px;display:block;background:#DDDDDD;"></image-slot>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- WORK -->
+  <section id="work" style="max-width:1180px;margin:0 auto;padding:96px 28px 34px;scroll-margin-top:80px;">
+    <div style="display:flex;align-items:flex-end;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-bottom:44px;">
+      <div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--accent,#CB2957);margin-bottom:12px;">Selected games</div>
+        <h2 style="font-family:'Space Grotesk';font-weight:700;font-size:clamp(30px,4.2vw,44px);margin:0;letter-spacing:-.02em;">Things I made and released</h2>
+      </div>
+      <p style="font-family:'Mulish';font-size:15px;line-height:1.55;color:rgba(26,26,26,.6);max-width:300px;margin:0;">Solo builds, concept to launch — all playable free on itch.io. Drop your own key art into the slots.</p>
+    </div>
+
+    <div style="display:flex;flex-direction:column;gap:26px;">
+
+      <!-- Game 1 -->
+      <article style="display:flex;flex-wrap:wrap;border:1px solid #DDDDDD;border-radius:20px;overflow:hidden;background:#FCFCFC;box-shadow:var(--shadow,0 8px 26px rgba(0,0,0,.06));">
+        <div style="flex:1 1 420px;min-width:300px;">
+          <image-slot id="ae_game1" shape="rect" placeholder="Noisy Boat — key art (16:10)" style="display:block;width:100%;aspect-ratio:16/10;background:#DDDDDD;"></image-slot>
+        </div>
+        <div style="flex:1 1 340px;min-width:280px;padding:34px 34px 32px;border-left:1px solid #DDDDDD;">
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:14px;">
+            <span style="font-family:'Space Grotesk';font-weight:700;font-size:28px;color:#1A1A1A;letter-spacing:-.01em;">Noisy Boat</span>
+            <span style="font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:500;color:var(--accent,#CB2957);border:1px solid var(--accent,#CB2957);border-radius:6px;padding:3px 9px;">Survival</span>
+          </div>
+          <div style="font-family:'JetBrains Mono',monospace;font-size:11.5px;font-weight:500;letter-spacing:.05em;color:rgba(26,26,26,.5);text-transform:uppercase;margin-bottom:16px;">Solo · Unity · Play free in browser</div>
+          <p style="font-size:15px;line-height:1.62;color:rgba(26,26,26,.78);margin:0 0 22px;">The last vessel, adrift on a rising sea. A tense survival loop built around resource pressure and a sound-driven atmosphere — a study in holding dread through pacing and feel.</p>
+          <div style="display:flex;flex-wrap:wrap;gap:7px;margin-bottom:24px;">
+            <span style="font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:500;text-transform:uppercase;color:rgba(26,26,26,.7);background:#EEEEEE;border:1px solid #DDDDDD;border-radius:6px;padding:4px 10px;">Design</span>
+            <span style="font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:500;text-transform:uppercase;color:rgba(26,26,26,.7);background:#EEEEEE;border:1px solid #DDDDDD;border-radius:6px;padding:4px 10px;">Code</span>
+            <span style="font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:500;text-transform:uppercase;color:rgba(26,26,26,.7);background:#EEEEEE;border:1px solid #DDDDDD;border-radius:6px;padding:4px 10px;">Game feel</span>
+          </div>
+          <div style="display:flex;gap:16px;align-items:center;flex-wrap:wrap;">
+            <a href="https://alejandroendo.itch.io/noisy-boat" target="_blank" style="font-family:'Space Grotesk';font-weight:600;font-size:14px;color:#EEEEEE;background:#1A1A1A;border-radius:9px;padding:10px 18px;text-decoration:none;transition:opacity .15s;" style-hover="opacity:.85;">Play in browser</a>
+            <a href="https://alejandroendo.itch.io/noisy-boat" target="_blank" style="font-family:'JetBrains Mono',monospace;font-weight:500;font-size:12.5px;color:#1A1A1A;text-decoration:none;border-bottom:1.5px solid var(--accent,#CB2957);padding-bottom:2px;">View page ↗</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Game 2 (image right) -->
+      <article style="display:flex;flex-wrap:wrap-reverse;border:1px solid #DDDDDD;border-radius:20px;overflow:hidden;background:#FCFCFC;box-shadow:var(--shadow,0 8px 26px rgba(0,0,0,.06));">
+        <div style="flex:1 1 340px;min-width:280px;padding:34px 34px 32px;">
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:14px;">
+            <span style="font-family:'Space Grotesk';font-weight:700;font-size:28px;color:#1A1A1A;letter-spacing:-.01em;">Wind Shear</span>
+            <span style="font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:500;color:var(--accent,#CB2957);border:1px solid var(--accent,#CB2957);border-radius:6px;padding:3px 9px;">Action</span>
+          </div>
+          <div style="font-family:'JetBrains Mono',monospace;font-size:11.5px;font-weight:500;letter-spacing:.05em;color:rgba(26,26,26,.5);text-transform:uppercase;margin-bottom:16px;">Solo · Unity · Play free in browser</div>
+          <p style="font-size:15px;line-height:1.62;color:rgba(26,26,26,.78);margin:0 0 22px;">A top-down, point-and-click wave-survival game. Built around readable enemy waves and a tuned difficulty curve so every clear feels earned.</p>
+          <div style="display:flex;flex-wrap:wrap;gap:7px;margin-bottom:24px;">
+            <span style="font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:500;text-transform:uppercase;color:rgba(26,26,26,.7);background:#EEEEEE;border:1px solid #DDDDDD;border-radius:6px;padding:4px 10px;">Design</span>
+            <span style="font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:500;text-transform:uppercase;color:rgba(26,26,26,.7);background:#EEEEEE;border:1px solid #DDDDDD;border-radius:6px;padding:4px 10px;">Systems</span>
+            <span style="font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:500;text-transform:uppercase;color:rgba(26,26,26,.7);background:#EEEEEE;border:1px solid #DDDDDD;border-radius:6px;padding:4px 10px;">Game feel</span>
+          </div>
+          <div style="display:flex;gap:16px;align-items:center;flex-wrap:wrap;">
+            <a href="https://alejandroendo.itch.io/wind-shear" target="_blank" style="font-family:'Space Grotesk';font-weight:600;font-size:14px;color:#EEEEEE;background:#1A1A1A;border-radius:9px;padding:10px 18px;text-decoration:none;transition:opacity .15s;" style-hover="opacity:.85;">Play in browser</a>
+            <a href="https://alejandroendo.itch.io/wind-shear" target="_blank" style="font-family:'JetBrains Mono',monospace;font-weight:500;font-size:12.5px;color:#1A1A1A;text-decoration:none;border-bottom:1.5px solid var(--accent,#CB2957);padding-bottom:2px;">View page ↗</a>
+          </div>
+        </div>
+        <div style="flex:1 1 420px;min-width:300px;border-left:1px solid #DDDDDD;">
+          <image-slot id="ae_game2" shape="rect" placeholder="Wind Shear — key art (16:9)" style="display:block;width:100%;height:100%;min-height:260px;background:#DDDDDD;"></image-slot>
+        </div>
+      </article>
+
+      <!-- Game 3 -->
+      <article style="display:flex;flex-wrap:wrap;border:1px solid #DDDDDD;border-radius:20px;overflow:hidden;background:#FCFCFC;box-shadow:var(--shadow,0 8px 26px rgba(0,0,0,.06));">
+        <div style="flex:1 1 420px;min-width:300px;">
+          <image-slot id="ae_game3" shape="rect" placeholder="Dark Havoc — key art (16:10)" style="display:block;width:100%;aspect-ratio:16/10;background:#DDDDDD;"></image-slot>
+        </div>
+        <div style="flex:1 1 340px;min-width:280px;padding:34px 34px 32px;border-left:1px solid #DDDDDD;">
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:14px;">
+            <span style="font-family:'Space Grotesk';font-weight:700;font-size:28px;color:#1A1A1A;letter-spacing:-.01em;">Dark Havoc</span>
+            <span style="font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:500;color:var(--accent,#CB2957);border:1px solid var(--accent,#CB2957);border-radius:6px;padding:3px 9px;">Roguelite</span>
+          </div>
+          <div style="font-family:'JetBrains Mono',monospace;font-size:11.5px;font-weight:500;letter-spacing:.05em;color:rgba(26,26,26,.5);text-transform:uppercase;margin-bottom:16px;">Solo · Unity · C# · Play free in browser</div>
+          <p style="font-size:15px;line-height:1.62;color:rgba(26,26,26,.78);margin:0 0 22px;">A skill-based action-adventure across procedurally generated levels. The generator keeps runs fresh while hand-tuned combat keeps the moment-to-moment tight.</p>
+          <div style="display:flex;flex-wrap:wrap;gap:7px;margin-bottom:24px;">
+            <span style="font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:500;text-transform:uppercase;color:rgba(26,26,26,.7);background:#EEEEEE;border:1px solid #DDDDDD;border-radius:6px;padding:4px 10px;">Code</span>
+            <span style="font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:500;text-transform:uppercase;color:rgba(26,26,26,.7);background:#EEEEEE;border:1px solid #DDDDDD;border-radius:6px;padding:4px 10px;">Proc-gen</span>
+            <span style="font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:500;text-transform:uppercase;color:rgba(26,26,26,.7);background:#EEEEEE;border:1px solid #DDDDDD;border-radius:6px;padding:4px 10px;">Game feel</span>
+          </div>
+          <div style="display:flex;gap:16px;align-items:center;flex-wrap:wrap;">
+            <a href="https://alejandroendo.itch.io/dark-havoc" target="_blank" style="font-family:'Space Grotesk';font-weight:600;font-size:14px;color:#EEEEEE;background:#1A1A1A;border-radius:9px;padding:10px 18px;text-decoration:none;transition:opacity .15s;" style-hover="opacity:.85;">Play in browser</a>
+            <a href="https://alejandroendo.itch.io/dark-havoc" target="_blank" style="font-family:'JetBrains Mono',monospace;font-weight:500;font-size:12.5px;color:#1A1A1A;text-decoration:none;border-bottom:1.5px solid var(--accent,#CB2957);padding-bottom:2px;">View page ↗</a>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- MORE FROM THE SHELF -->
+  <section style="max-width:1180px;margin:0 auto;padding:62px 28px 44px;">
+    <div style="margin-bottom:36px;">
+      <div style="font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--accent,#CB2957);margin-bottom:12px;">More from the shelf</div>
+      <h2 style="font-family:'Space Grotesk';font-weight:700;font-size:clamp(28px,3.6vw,38px);margin:0;letter-spacing:-.02em;">Prototypes &amp; smaller builds</h2>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px;">
+      <a href="https://alejandroendo.itch.io/the-mighty-sequel" target="_blank" style="text-decoration:none;color:inherit;border:1px solid #DDDDDD;border-radius:16px;overflow:hidden;background:#FCFCFC;box-shadow:var(--shadow-sm,0 4px 16px rgba(0,0,0,.05));transition:transform .16s,box-shadow .16s;display:block;" style-hover="transform:translateY(-4px);box-shadow:0 14px 30px rgba(0,0,0,.1);">
+        <image-slot id="ae_jam1" shape="rect" placeholder="The Mighty Sequel" style="display:block;width:100%;aspect-ratio:4/3;background:#DDDDDD;border-bottom:1px solid #DDDDDD;"></image-slot>
+        <div style="padding:17px 19px 19px;">
+          <div style="font-family:'Space Grotesk';font-weight:600;font-size:19px;margin-bottom:5px;letter-spacing:-.01em;">The Mighty Sequel</div>
+          <div style="font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:500;text-transform:uppercase;color:rgba(26,26,26,.55);letter-spacing:.04em;">Platformer · Lost Medium Games</div>
+        </div>
+      </a>
+      <a href="https://alejandroendo.itch.io/the-mighty-hooker" target="_blank" style="text-decoration:none;color:inherit;border:1px solid #DDDDDD;border-radius:16px;overflow:hidden;background:#FCFCFC;box-shadow:var(--shadow-sm,0 4px 16px rgba(0,0,0,.05));transition:transform .16s,box-shadow .16s;display:block;" style-hover="transform:translateY(-4px);box-shadow:0 14px 30px rgba(0,0,0,.1);">
+        <image-slot id="ae_jam2" shape="rect" placeholder="The Mighty Hooker" style="display:block;width:100%;aspect-ratio:4/3;background:#DDDDDD;border-bottom:1px solid #DDDDDD;"></image-slot>
+        <div style="padding:17px 19px 19px;">
+          <div style="font-family:'Space Grotesk';font-weight:600;font-size:19px;margin-bottom:5px;letter-spacing:-.01em;">The Mighty Hooker</div>
+          <div style="font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:500;text-transform:uppercase;color:rgba(26,26,26,.55);letter-spacing:.04em;">Platformer · grapple momentum</div>
+        </div>
+      </a>
+      <a href="https://munitsuki.itch.io/the-migthy-gladiator" target="_blank" style="text-decoration:none;color:inherit;border:1px solid #DDDDDD;border-radius:16px;overflow:hidden;background:#FCFCFC;box-shadow:var(--shadow-sm,0 4px 16px rgba(0,0,0,.05));transition:transform .16s,box-shadow .16s;display:block;" style-hover="transform:translateY(-4px);box-shadow:0 14px 30px rgba(0,0,0,.1);">
+        <image-slot id="ae_jam3" shape="rect" placeholder="The Mighty Gladiator" style="display:block;width:100%;aspect-ratio:4/3;background:#DDDDDD;border-bottom:1px solid #DDDDDD;"></image-slot>
+        <div style="padding:17px 19px 19px;">
+          <div style="font-family:'Space Grotesk';font-weight:600;font-size:19px;margin-bottom:5px;letter-spacing:-.01em;">The Mighty Gladiator</div>
+          <div style="font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:500;text-transform:uppercase;color:rgba(26,26,26,.55);letter-spacing:.04em;">Dungeon crawler · as Muni</div>
+        </div>
+      </a>
+      <a href="https://alejandroendo.itch.io/space-invaders-clone" target="_blank" style="text-decoration:none;color:inherit;border:1px solid #DDDDDD;border-radius:16px;overflow:hidden;background:#FCFCFC;box-shadow:var(--shadow-sm,0 4px 16px rgba(0,0,0,.05));transition:transform .16s,box-shadow .16s;display:block;" style-hover="transform:translateY(-4px);box-shadow:0 14px 30px rgba(0,0,0,.1);">
+        <image-slot id="ae_jam4" shape="rect" placeholder="Space Invaders Clone" style="display:block;width:100%;aspect-ratio:4/3;background:#DDDDDD;border-bottom:1px solid #DDDDDD;"></image-slot>
+        <div style="padding:17px 19px 19px;">
+          <div style="font-family:'Space Grotesk';font-weight:600;font-size:19px;margin-bottom:5px;letter-spacing:-.01em;">Space Invaders Clone</div>
+          <div style="font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:500;text-transform:uppercase;color:rgba(26,26,26,.55);letter-spacing:.04em;">Arcade · game-feel study</div>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills" style="background:#1A1A1A;color:#EEEEEE;margin-top:52px;scroll-margin-top:80px;">
+    <div style="max-width:1180px;margin:0 auto;padding:88px 28px;">
+      <div style="margin-bottom:48px;max-width:640px;">
+        <div style="font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--accent,#CB2957);margin-bottom:12px;">What I bring to a team</div>
+        <h2 style="font-family:'Space Grotesk';font-weight:700;font-size:clamp(30px,4.2vw,44px);margin:0 0 16px;letter-spacing:-.02em;">A designer's eye and a developer's toolbox.</h2>
+        <p style="font-size:16.5px;line-height:1.6;color:rgba(238,238,238,.66);margin:0;">Shipping solo means I've owned the full loop — from prototype to feel. I can drop into gameplay or systems, work comfortably in VR and mobile, and sweat the last 10% that makes a build satisfying.</p>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;">
+        <div style="border:1px solid rgba(238,238,238,.16);border-radius:16px;padding:26px;background:rgba(238,238,238,.03);">
+          <div style="font-family:'Space Grotesk';font-weight:600;font-size:19px;color:var(--accent,#CB2957);margin-bottom:18px;">Engine &amp; XR</div>
+          <div style="display:flex;flex-wrap:wrap;gap:8px;">
+            <span style="font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:500;border:1px solid rgba(238,238,238,.24);border-radius:7px;padding:5px 10px;">Unity</span>
+            <span style="font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:500;border:1px solid rgba(238,238,238,.24);border-radius:7px;padding:5px 10px;">XR Toolkit</span>
+            <span style="font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:500;border:1px solid rgba(238,238,238,.24);border-radius:7px;padding:5px 10px;">Meta Quest SDK</span>
+            <span style="font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:500;border:1px solid rgba(238,238,238,.24);border-radius:7px;padding:5px 10px;">Android</span>
+          </div>
+        </div>
+        <div style="border:1px solid rgba(238,238,238,.16);border-radius:16px;padding:26px;background:rgba(238,238,238,.03);">
+          <div style="font-family:'Space Grotesk';font-weight:600;font-size:19px;color:var(--accent,#CB2957);margin-bottom:18px;">Code</div>
+          <div style="display:flex;flex-wrap:wrap;gap:8px;">
+            <span style="font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:500;border:1px solid rgba(238,238,238,.24);border-radius:7px;padding:5px 10px;">C#</span>
+            <span style="font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:500;border:1px solid rgba(238,238,238,.24);border-radius:7px;padding:5px 10px;">Shader Graph</span>
+            <span style="font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:500;border:1px solid rgba(238,238,238,.24);border-radius:7px;padding:5px 10px;">Git</span>
+            <span style="font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:500;border:1px solid rgba(238,238,238,.24);border-radius:7px;padding:5px 10px;">Design patterns</span>
+          </div>
+        </div>
+        <div style="border:1px solid rgba(238,238,238,.16);border-radius:16px;padding:26px;background:rgba(238,238,238,.03);">
+          <div style="font-family:'Space Grotesk';font-weight:600;font-size:19px;color:var(--accent,#CB2957);margin-bottom:18px;">Disciplines</div>
+          <div style="display:flex;flex-wrap:wrap;gap:8px;">
+            <span style="font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:500;border:1px solid rgba(238,238,238,.24);border-radius:7px;padding:5px 10px;">Gameplay</span>
+            <span style="font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:500;border:1px solid rgba(238,238,238,.24);border-radius:7px;padding:5px 10px;">Systems</span>
+            <span style="font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:500;border:1px solid rgba(238,238,238,.24);border-radius:7px;padding:5px 10px;">VR / XR</span>
+            <span style="font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:500;border:1px solid rgba(238,238,238,.24);border-radius:7px;padding:5px 10px;">Mobile</span>
+            <span style="font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:500;border:1px solid rgba(238,238,238,.24);border-radius:7px;padding:5px 10px;">Proc-gen</span>
+          </div>
+        </div>
+        <div style="border:1px solid rgba(238,238,238,.16);border-radius:16px;padding:26px;background:rgba(238,238,238,.03);">
+          <div style="font-family:'Space Grotesk';font-weight:600;font-size:19px;color:var(--accent,#CB2957);margin-bottom:18px;">Craft</div>
+          <div style="display:flex;flex-wrap:wrap;gap:8px;">
+            <span style="font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:500;border:1px solid rgba(238,238,238,.24);border-radius:7px;padding:5px 10px;">Game feel</span>
+            <span style="font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:500;border:1px solid rgba(238,238,238,.24);border-radius:7px;padding:5px 10px;">Prototyping</span>
+            <span style="font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:500;border:1px solid rgba(238,238,238,.24);border-radius:7px;padding:5px 10px;">UX</span>
+            <span style="font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:500;border:1px solid rgba(238,238,238,.24);border-radius:7px;padding:5px 10px;">Visual polish</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" style="max-width:1180px;margin:0 auto;padding:96px 28px;scroll-margin-top:80px;display:flex;flex-wrap:wrap;gap:56px;align-items:center;">
+    <div style="flex:0 1 280px;min-width:240px;display:flex;justify-content:center;">
+      <div style="position:relative;width:248px;height:248px;">
+        <div style="position:absolute;inset:-8px;border-radius:50%;border:1px solid var(--accent,#CB2957);"></div>
+        <image-slot id="ae_about" shape="circle" placeholder="A photo of you" style="position:relative;width:248px;height:248px;border:1px solid #DDDDDD;border-radius:50%;display:block;background:#DDDDDD;"></image-slot>
+      </div>
+    </div>
+    <div style="flex:1 1 460px;min-width:300px;">
+      <div style="font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--accent,#CB2957);margin-bottom:14px;">About</div>
+      <h2 style="font-family:'Space Grotesk';font-weight:700;font-size:clamp(28px,3.6vw,38px);margin:0 0 20px;letter-spacing:-.02em;">Designer first, developer always.</h2>
+      <p style="font-size:16px;line-height:1.68;color:rgba(26,26,26,.78);margin:0 0 16px;">I'm an interactive-media designer with a solid software-engineering background and 6 years of professional experience. For the last 3.5 I've specialised in Unity, mostly VR and mobile — and since 2021 I've poured my free time into side projects, honing gameplay dynamics and the elusive craft of <em>game feel</em>.</p>
+      <p style="font-size:16px;line-height:1.68;color:rgba(26,26,26,.78);margin:0 0 30px;">I recently graduated with honours from an MSc in Game Development at Universal Arts School, where I shipped several games as a solo developer. My goal is always the same: a final product that's captivating, satisfying, and genuinely enjoyable to play.</p>
+      <div style="display:flex;gap:36px;flex-wrap:wrap;">
+        <div><div style="font-family:'Space Grotesk';font-weight:700;font-size:36px;color:var(--accent,#CB2957);line-height:1;">6</div><div style="font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:500;text-transform:uppercase;color:rgba(26,26,26,.55);margin-top:6px;letter-spacing:.04em;">Years in software</div></div>
+        <div><div style="font-family:'Space Grotesk';font-weight:700;font-size:36px;color:var(--accent,#CB2957);line-height:1;">3.5</div><div style="font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:500;text-transform:uppercase;color:rgba(26,26,26,.55);margin-top:6px;letter-spacing:.04em;">Years in Unity / VR</div></div>
+        <div><div style="font-family:'Space Grotesk';font-weight:700;font-size:36px;color:var(--accent,#CB2957);line-height:1;">7</div><div style="font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:500;text-transform:uppercase;color:rgba(26,26,26,.55);margin-top:6px;letter-spacing:.04em;">Games shipped</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DEVLOG -->
+  <section id="log" style="max-width:1180px;margin:0 auto;padding:20px 28px 96px;scroll-margin-top:80px;">
+    <div style="margin-bottom:32px;">
+      <div style="font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--accent,#CB2957);margin-bottom:12px;">Devlog</div>
+      <h2 style="font-family:'Space Grotesk';font-weight:700;font-size:clamp(28px,3.6vw,38px);margin:0;letter-spacing:-.02em;">Notes from the workbench</h2>
+    </div>
+    <div style="border:1px solid #DDDDDD;border-radius:18px;overflow:hidden;background:#FCFCFC;box-shadow:var(--shadow-sm,0 4px 16px rgba(0,0,0,.05));">
+      <sc-for list="{{ logs }}" as="log" hint-placeholder-count="3">
+        <a href="#log" style="display:flex;align-items:center;justify-content:space-between;gap:20px;padding:24px 28px;border-bottom:1px solid #DDDDDD;text-decoration:none;color:inherit;flex-wrap:wrap;transition:background .15s;" style-hover="background:#EEEEEE;">
+          <div style="display:flex;align-items:baseline;gap:22px;flex:1 1 320px;min-width:0;">
+            <span style="font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:500;color:var(--accent,#CB2957);flex-shrink:0;width:60px;">{{ log.date }}</span>
+            <span style="font-family:'Space Grotesk';font-weight:600;font-size:18px;color:#1A1A1A;letter-spacing:-.01em;">{{ log.title }}</span>
+          </div>
+          <span style="font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:500;color:rgba(26,26,26,.45);flex-shrink:0;">{{ log.read }} →</span>
+        </a>
+      </sc-for>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" style="background:var(--accent,#CB2957);scroll-margin-top:80px;">
+    <div style="max-width:1180px;margin:0 auto;padding:92px 28px;text-align:center;color:#EEEEEE;">
+      <div style="font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:rgba(238,238,238,.72);margin-bottom:18px;">Let's talk</div>
+      <h2 style="font-family:'Space Grotesk';font-weight:700;font-size:clamp(32px,5vw,56px);line-height:1.06;margin:0 auto 22px;max-width:780px;letter-spacing:-.025em;">Need a solo dev who sweats the game feel?</h2>
+      <p style="font-size:18px;line-height:1.6;max-width:520px;margin:0 auto 36px;color:rgba(238,238,238,.92);">I'm open to gameplay, systems, VR and mobile roles — remote or relocating. Let's make something that feels great to play.</p>
+      <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-bottom:32px;">
+        <a href="https://www.linkedin.com/in/alejandro-endo-5b5636129/" target="_blank" style="font-family:'Space Grotesk';font-weight:600;font-size:16px;color:#1A1A1A;background:#EEEEEE;border-radius:11px;padding:14px 26px;text-decoration:none;transition:transform .15s;" style-hover="transform:translateY(-2px);">Message me on LinkedIn</a>
+        <a href="#" style="font-family:'Space Grotesk';font-weight:600;font-size:16px;color:#EEEEEE;background:#1A1A1A;border-radius:11px;padding:14px 26px;text-decoration:none;transition:transform .15s;" style-hover="transform:translateY(-2px);">Download CV (PDF)</a>
+      </div>
+      <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap;font-family:'JetBrains Mono',monospace;font-size:12.5px;font-weight:500;">
+        <a href="https://alejandroendo.itch.io/" target="_blank" style="color:#EEEEEE;text-decoration:none;border:1px solid rgba(238,238,238,.45);border-radius:8px;padding:8px 15px;" style-hover="background:#EEEEEE;color:var(--accent,#CB2957);">itch.io</a>
+        <a href="#" style="color:#EEEEEE;text-decoration:none;border:1px solid rgba(238,238,238,.45);border-radius:8px;padding:8px 15px;" style-hover="background:#EEEEEE;color:var(--accent,#CB2957);">Google Play</a>
+        <a href="https://www.linkedin.com/in/alejandro-endo-5b5636129/" target="_blank" style="color:#EEEEEE;text-decoration:none;border:1px solid rgba(238,238,238,.45);border-radius:8px;padding:8px 15px;" style-hover="background:#EEEEEE;color:var(--accent,#CB2957);">LinkedIn</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer style="background:#1A1A1A;color:#EEEEEE;padding:72px 28px 52px;text-align:center;overflow:hidden;">
+    <div style="font-family:'Space Grotesk';font-weight:700;font-size:clamp(52px,13vw,140px);line-height:.88;letter-spacing:-.03em;color:#EEEEEE;margin-bottom:32px;">
+      <div>alejandro</div>
+      <div style="color:var(--accent,#CB2957);">endo</div>
+    </div>
+    <div style="font-family:'JetBrains Mono',monospace;font-size:11.5px;font-weight:500;letter-spacing:.06em;color:rgba(238,238,238,.5);text-transform:uppercase;">© 2026 Alejandro Endo · Solo game developer · Designer by profession, developer by choice</div>
+  </footer>
+
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script="" data-props="{&quot;accent&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;Raspberry&quot;,&quot;Slate&quot;,&quot;Ink&quot;],&quot;default&quot;:&quot;Raspberry&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;heroStyle&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;Dark&quot;,&quot;Light&quot;],&quot;default&quot;:&quot;Dark&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;softShadows&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;}}">
+class Component extends DCLogic {
+  computed() {
+    const p = this.props || {};
+    const accent = ({ Raspberry: '#CB2957', Slate: '#40607F', Ink: '#1A1A1A' })[p.accent] || '#CB2957';
+    const heroDark = (p.heroStyle ?? 'Dark') !== 'Light';
+    const soft = p.softShadows ?? true;
+    return {
+      '--accent': accent,
+      '--hero-bg': heroDark ? '#1A1A1A' : '#EEEEEE',
+      '--hero-ink': heroDark ? '#EEEEEE' : '#1A1A1A',
+      '--hero-sub': heroDark ? 'rgba(238,238,238,.68)' : 'rgba(26,26,26,.66)',
+      '--hero-line': heroDark ? '#2A2A2A' : '#DDDDDD',
+      '--hero-chip': heroDark ? 'rgba(238,238,238,.24)' : 'rgba(26,26,26,.2)',
+      '--shadow': soft ? '0 8px 26px rgba(0,0,0,.06)' : '0 0 0 1px #DDDDDD',
+      '--shadow-sm': soft ? '0 4px 16px rgba(0,0,0,.05)' : 'none',
+    };
+  }
+  applyVars(el) {
+    if (!el) return;
+    const v = this.computed();
+    for (const k in v) el.style.setProperty(k, v[k]);
+  }
+  componentDidMount() { this.applyVars(this._root); }
+  componentDidUpdate() { this.applyVars(this._root); }
+  renderVals() {
+    return {
+      setRoot: (el) => { this._root = el; this.applyVars(el); },
+      logs: [
+        { date: '2026.05', title: 'Tuning the wave curve in Wind Shear', read: '6 min' },
+        { date: '2026.02', title: 'What three years of VR side-projects taught me', read: '9 min' },
+        { date: '2025.11', title: 'Procedural levels that still feel authored — Dark Havoc', read: '7 min' },
+      ],
+    };
+  }
+}
+</script>
+
+
+</body></html>

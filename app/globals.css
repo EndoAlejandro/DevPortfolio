@@ -1,0 +1,175 @@
+@import "tailwindcss";
+
+/*
+  Design tokens for the Alejandro Endo portfolio.
+  Source of truth: mockups/portfolio-v2.clean.html
+  Tailwind v4: everything in @theme becomes a utility, e.g.
+    --color-paper    -> bg-paper / text-paper / border-paper
+    --shadow-soft    -> shadow-soft
+    --font-heading   -> font-heading
+    --radius-card    -> rounded-card
+  Change the look here, not with inline styles.
+
+  Style: clean/modern/editorial — light gray page, near-black ink,
+  purple accent, thin 1px borders, soft shadows. Dark sections
+  (hero, skills, footer) flip to ink background with paper text.
+*/
+@theme {
+  /* ============================================================
+     PALETTE — change these six to recolor the whole site.
+     ============================================================ */
+  --color-paper: #eeeeee; /* page background */
+  --color-ink: #1a1a1a; /* text + dark sections */
+  --color-accent: #831c91; /* primary accent (purple) */
+  --color-accent-slate: #40607f; /* alt accent (unused by default) */
+  --color-card: #fcfcfc; /* card surface on light bg */
+  --color-line: #dddddd; /* hairline borders on light bg */
+
+  /* Soft shadows */
+  --shadow-soft-sm: 0 4px 16px rgba(0, 0, 0, 0.05);
+  --shadow-soft: 0 8px 26px rgba(0, 0, 0, 0.06);
+  --shadow-lift: 0 14px 30px rgba(0, 0, 0, 0.1); /* hover */
+
+  /* ============================================================
+     CORNER RADIUS — a little rounding. Bump up for rounder UI,
+     down toward 0 for sharper. Every card/button/chip uses these.
+     ============================================================ */
+  --radius-chip: 7px;
+  --radius-badge: 9px;
+  --radius-btn: 11px;
+  --radius-card: 16px;
+  --radius-card-lg: 20px;
+  --radius-card-xl: 22px;
+
+  /* ============================================================
+     FONTS — swap the family in app/layout.tsx; keep names in sync.
+     ============================================================ */
+  --font-heading: var(--font-space-grotesk), system-ui, sans-serif;
+  --font-mono: var(--font-jetbrains), ui-monospace, monospace;
+  --font-body: var(--font-mulish), system-ui, sans-serif;
+}
+
+/*
+  Scoped theme for the Lost Medium studio page. Overriding the color
+  variables on a wrapper cascades to every child utility (text-accent,
+  bg-card, border-line, ...), so the shared cards adopt the studio's
+  cream + forest palette automatically. Colors based on the Lost Medium
+  proposal cover (warm cream, pine green, ink) — Comfandi blue ignored.
+*/
+.theme-studio {
+  --color-paper: #faf4e0; /* warm cream */
+  --color-ink: #1a1a1a;
+  --color-accent: #0e5c43; /* pine / forest green */
+  --color-card: #fffdf5; /* lighter cream card surface */
+  --color-line: rgba(26, 26, 26, 0.18); /* ink hairline */
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+/* Rendered Markdown body (project write-ups + blog posts). */
+.markdown {
+  font-family: var(--font-body);
+  font-size: 17px;
+  line-height: 1.72;
+  color: color-mix(in srgb, var(--color-ink) 82%, transparent);
+}
+.markdown > :first-child {
+  margin-top: 0;
+}
+.markdown h2,
+.markdown h3,
+.markdown h4 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--color-ink);
+  line-height: 1.2;
+  margin: 1.8em 0 0.6em;
+}
+.markdown h2 {
+  font-size: 1.6em;
+}
+.markdown h3 {
+  font-size: 1.28em;
+}
+.markdown h4 {
+  font-size: 1.1em;
+}
+.markdown p {
+  margin: 0 0 1.15em;
+}
+.markdown a {
+  color: var(--color-accent);
+  text-decoration: none;
+  border-bottom: 1.5px solid var(--color-accent);
+}
+.markdown strong {
+  color: var(--color-ink);
+  font-weight: 700;
+}
+.markdown ul,
+.markdown ol {
+  margin: 0 0 1.15em;
+  padding-left: 1.3em;
+}
+.markdown li {
+  margin: 0.35em 0;
+}
+.markdown blockquote {
+  margin: 1.4em 0;
+  padding: 0.2em 1.1em;
+  border-left: 3px solid var(--color-accent);
+  color: color-mix(in srgb, var(--color-ink) 64%, transparent);
+  font-style: italic;
+}
+.markdown code {
+  font-family: var(--font-mono);
+  font-size: 0.88em;
+  background: color-mix(in srgb, var(--color-ink) 6%, transparent);
+  border: 1px solid var(--color-line);
+  border-radius: 6px;
+  padding: 0.1em 0.4em;
+}
+.markdown pre {
+  font-family: var(--font-mono);
+  background: var(--color-ink);
+  color: var(--color-paper);
+  border-radius: var(--radius-card);
+  padding: 20px 22px;
+  overflow-x: auto;
+  margin: 0 0 1.3em;
+}
+.markdown pre code {
+  background: none;
+  border: none;
+  padding: 0;
+  font-size: 0.85em;
+}
+.markdown img {
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--radius-card);
+  border: 1px solid var(--color-line);
+}
+.markdown hr {
+  border: none;
+  border-top: 1px solid var(--color-line);
+  margin: 2em 0;
+}
