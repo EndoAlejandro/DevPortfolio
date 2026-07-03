@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Hero from "@/components/Hero";
 import ProjectCard from "@/components/ProjectCard";
 import ShelfCard from "@/components/ShelfCard";
@@ -35,9 +36,17 @@ export default async function Home() {
               Things I made and released
             </h2>
           </div>
-          <p className="font-body text-[15px] leading-[1.55] text-ink/60 max-w-[300px] m-0">
-            Solo builds, concept to launch — all playable free on itch.io.
-          </p>
+          <div className="max-w-[300px]">
+            <p className="font-body text-[15px] leading-[1.55] text-ink/60 m-0 mb-2">
+              Solo builds, concept to launch — all playable free on itch.io.
+            </p>
+            <Link
+              href="/games"
+              className="font-mono text-[12px] font-medium text-ink/55 no-underline hover:text-accent transition-colors"
+            >
+              View all games →
+            </Link>
+          </div>
         </div>
 
         <div className="flex flex-col gap-[26px]">
