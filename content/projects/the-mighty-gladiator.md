@@ -9,9 +9,13 @@ studio: false
 category: "shelf"
 order: 3
 cover: "/images/projects/the-mighty-gladiator.jpg"
+video: "https://youtu.be/tjGo0sq6Nzs"
+gallery:
+  - "/images/projects/the-mighty-gladiator-01.jpg"
+  - "/images/projects/the-mighty-gladiator-02.jpg"
 links:
   play: "https://munitsuki.itch.io/the-migthy-gladiator"
-  page: "https://munitsuki.itch.io/the-migthy-gladiator"
+  page:
 ---
 
 A dungeon crawler released under the **Muni** alias — combat, loot, and that

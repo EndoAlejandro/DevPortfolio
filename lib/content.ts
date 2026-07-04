@@ -16,6 +16,13 @@ async function renderMarkdown(markdown: string): Promise<string> {
   return processed.toString();
 }
 
+/** True if a "/images/..."-style public path points at a real file. */
+function publicFileExists(publicPath?: string): boolean {
+  if (!publicPath) return false;
+  const rel = publicPath.replace(/^\//, "");
+  return fs.existsSync(path.join(process.cwd(), "public", rel));
+}
+
 /** List the slugs (filenames without .md) in a content folder. */
 function listSlugs(dir: string): string[] {
   if (!fs.existsSync(dir)) return [];
@@ -32,8 +39,19 @@ export async function getProjectBySlug(slug: string): Promise<Project> {
   const raw = fs.readFileSync(fullPath, "utf8");
   const { data, content } = matter(raw);
   const contentHtml = await renderMarkdown(content);
-  // Front-matter fields; slug falls back to the filename.
-  return { ...(data as Omit<Project, "contentHtml">), slug: data.slug ?? slug, contentHtml };
+  const project = {
+    ...(data as Omit<Project, "contentHtml">),
+    slug: data.slug ?? slug,
+    contentHtml,
+  };
+  // Only keep image paths that actually exist under /public, so missing
+  // files fall back to placeholders instead of rendering as broken images.
+  if (!publicFileExists(project.cover)) project.cover = "";
+  project.gallery = (project.gallery ?? []).filter(publicFileExists);
+  if (project.videoThumbnail && !publicFileExists(project.videoThumbnail)) {
+    project.videoThumbnail = undefined;
+  }
+  return project;
 }
 
 export async function getAllProjects(): Promise<Project[]> {

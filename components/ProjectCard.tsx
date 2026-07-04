@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { Project } from "@/lib/types";
 import TagPill from "./TagPill";
+import CoverImage from "./CoverImage";
 
 // Large "Selected games" card. Alternates image side by index parity.
 export default function ProjectCard({
@@ -10,17 +11,18 @@ export default function ProjectCard({
   project: Project;
   imageRight?: boolean;
 }) {
-  const { title, genre, role, summary, tags, links, slug } = project;
+  const { title, genre, role, summary, tags, links, slug, cover } = project;
 
   const imageCol = (
     <div
       className={`flex-1 basis-[420px] min-w-[300px] ${imageRight ? "border-l border-line" : ""}`}
     >
-      {/* Cover placeholder — swap for real key art at project.cover */}
-      <div className="w-full aspect-[16/10] bg-[#DDDDDD] grid place-items-center">
-        <span className="font-mono text-[11px] text-ink/40 uppercase tracking-[0.1em]">
-          {title}
-        </span>
+      <div className="relative w-full aspect-[16/10] bg-[#DDDDDD] grid place-items-center overflow-hidden">
+        <CoverImage
+          src={cover}
+          alt={title}
+          sizes="(max-width: 768px) 100vw, 50vw"
+        />
       </div>
     </div>
   );

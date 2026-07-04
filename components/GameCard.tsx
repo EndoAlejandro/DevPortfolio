@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { Project } from "@/lib/types";
 import TagPill from "./TagPill";
+import CoverImage from "./CoverImage";
 
 // Uniform catalog card used on /games. Links to the internal project page.
 export default function GameCard({ project }: { project: Project }) {
@@ -9,15 +10,17 @@ export default function GameCard({ project }: { project: Project }) {
       href={`/projects/${project.slug}`}
       className="group no-underline text-inherit border border-line rounded-card overflow-hidden bg-card shadow-soft-sm h-full flex flex-col transition-[transform,box-shadow] duration-150 hover:-translate-y-1 hover:shadow-lift"
     >
-      <div className="relative w-full aspect-[16/10] bg-[#DDDDDD] border-b border-line grid place-items-center">
+      <div className="relative w-full aspect-[16/10] bg-[#DDDDDD] border-b border-line grid place-items-center overflow-hidden">
+        <CoverImage
+          src={project.cover}
+          alt={project.title}
+          sizes="(max-width: 768px) 100vw, 33vw"
+        />
         {project.genre && (
-          <span className="absolute top-3 left-3">
+          <span className="absolute top-3 left-3 z-10">
             <TagPill variant="genre">{project.genre}</TagPill>
           </span>
         )}
-        <span className="font-mono text-[11px] text-ink/40 uppercase tracking-[0.1em] px-4 text-center">
-          {project.title}
-        </span>
       </div>
       <div className="px-[19px] pt-[17px] pb-[19px] flex flex-col flex-1">
         <div className="font-heading font-semibold text-[20px] tracking-[-0.01em] mb-[6px] group-hover:text-accent transition-colors">

@@ -31,8 +31,10 @@ export interface Project {
   category: ProjectCategory;
   /** Cover image path under /public, e.g. "/images/projects/foo-cover.jpg". */
   cover: string;
-  /** Optional YouTube URL (watch/youtu.be/embed) — embedded on the project page. */
+  /** Optional YouTube URL (watch/youtu.be/embed) — shown as a play miniature. */
   video?: string;
+  /** Optional custom thumbnail for the video miniature; defaults to YouTube's. */
+  videoThumbnail?: string;
   /** Optional extra images shown on the project's own page. */
   gallery?: string[];
   links?: ProjectLinks;

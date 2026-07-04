@@ -2,9 +2,11 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { getAllProjects, getProjectBySlug } from "@/lib/content";
-import { youtubeEmbedUrl } from "@/lib/youtube";
+import { youtubeEmbedUrl, youtubeThumbnail } from "@/lib/youtube";
 import MarkdownBody from "@/components/MarkdownBody";
 import TagPill from "@/components/TagPill";
+import CoverImage from "@/components/CoverImage";
+import Lightbox from "@/components/Lightbox";
 import type { Project } from "@/lib/types";
 
 export async function generateStaticParams() {
@@ -44,6 +46,8 @@ export default async function ProjectPage({
   if (!project) notFound();
 
   const embed = youtubeEmbedUrl(project.video);
+  const videoThumb = project.videoThumbnail || youtubeThumbnail(project.video);
+  const hasGalleryRow = !!embed || (project.gallery?.length ?? 0) > 0;
 
   return (
     <main className="max-w-[1000px] mx-auto px-7 pt-16 pb-24">
@@ -113,42 +117,61 @@ export default async function ProjectPage({
         </div>
       )}
 
-      {/* Media — YouTube video if provided, otherwise the cover */}
-      {embed ? (
-        <div className="relative w-full aspect-video rounded-card-lg overflow-hidden border border-line bg-ink mb-10">
-          <iframe
-            src={embed}
-            title={`${project.title} — video`}
-            className="absolute inset-0 w-full h-full"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowFullScreen
+      <Lightbox>
+        {/* Key art — click to zoom */}
+        <div className="relative w-full aspect-[16/10] rounded-card-lg overflow-hidden border border-line bg-[#DDDDDD] grid place-items-center mb-10">
+          <CoverImage
+            src={project.cover}
+            alt={`${project.title} — key art`}
+            sizes="(max-width: 1000px) 100vw, 1000px"
           />
         </div>
-      ) : (
-        <div className="w-full aspect-[16/10] rounded-card-lg overflow-hidden border border-line bg-[#DDDDDD] grid place-items-center mb-10">
-          <span className="font-mono text-[11px] text-ink/40 uppercase tracking-[0.1em]">
-            {project.title} — key art
-          </span>
-        </div>
-      )}
 
-      {/* Write-up */}
-      <MarkdownBody html={project.contentHtml} />
+        {/* Write-up */}
+        <MarkdownBody html={project.contentHtml} />
 
-      {/* Gallery */}
-      {project.gallery && project.gallery.length > 0 && (
-        <div className="grid grid-cols-[repeat(auto-fit,minmax(280px,1fr))] gap-4 mt-12">
-          {project.gallery.map((src) => (
-            /* eslint-disable-next-line @next/next/no-img-element */
-            <img
-              key={src}
-              src={src}
-              alt={project.title}
-              className="w-full rounded-card border border-line"
-            />
-          ))}
-        </div>
-      )}
+        {/* Gallery — screenshots + a video miniature that plays on click */}
+        {hasGalleryRow && (
+          <div className="grid grid-cols-[repeat(auto-fit,minmax(280px,1fr))] gap-4 mt-12">
+            {embed && (
+              <button
+                type="button"
+                data-video={`${embed}?autoplay=1&rel=0`}
+                aria-label={`Play ${project.title} gameplay`}
+                className="group relative block w-full aspect-video rounded-card border border-line overflow-hidden bg-ink cursor-pointer"
+              >
+                {videoThumb && (
+                  /* eslint-disable-next-line @next/next/no-img-element */
+                  <img
+                    src={videoThumb}
+                    alt={`${project.title} — gameplay`}
+                    className="absolute inset-0 w-full h-full object-cover opacity-90 group-hover:opacity-100 transition-opacity !cursor-pointer"
+                  />
+                )}
+                <span className="absolute inset-0 grid place-items-center">
+                  <span className="grid place-items-center w-[54px] h-[54px] rounded-full bg-black/55 group-hover:bg-accent transition-colors">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="white" aria-hidden="true">
+                      <path d="M8 5v14l11-7z" />
+                    </svg>
+                  </span>
+                </span>
+                <span className="absolute bottom-2 left-3 font-mono text-[10px] font-medium uppercase tracking-[0.08em] text-white/90">
+                  Gameplay
+                </span>
+              </button>
+            )}
+            {project.gallery?.map((src) => (
+              /* eslint-disable-next-line @next/next/no-img-element */
+              <img
+                key={src}
+                src={src}
+                alt={project.title}
+                className="w-full rounded-card border border-line"
+              />
+            ))}
+          </div>
+        )}
+      </Lightbox>
     </main>
   );
 }

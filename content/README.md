@@ -31,7 +31,8 @@ studio: false                 # true = also shows on /studio (Lost Medium)
 category: "selected"          # "selected" = big cards · "shelf" = small grid
 order: 1                      # lower = appears first within its section
 cover: "/images/projects/noisy-boat.jpg"      # key art (put file in public/)
-video: "https://youtu.be/XXXXXXXXXXX"          # optional YouTube trailer
+video: "https://youtu.be/XXXXXXXXXXX"          # optional YouTube gameplay
+videoThumbnail: "/images/projects/noisy-boat-clip.jpg"  # optional (defaults to YouTube's)
 gallery:                                        # optional extra screenshots
   - "/images/projects/noisy-boat-01.jpg"
 links:
@@ -50,8 +51,10 @@ Notes:
 - Only `title`, `slug`, `summary`, `tags`, `studio`, `category`, and `cover` are
   required. Everything else is optional and the card/page adapts if it's missing.
 - **`video`** accepts any YouTube URL (`watch?v=`, `youtu.be/`, `embed/`, or a
-  bare id). It renders as a player at the top of the project page; with no video
-  the `cover` image is shown instead.
+  bare id). It shows up as a **play miniature in the gallery**; clicking it opens
+  the video full-screen. The top of the page always shows the `cover` image.
+  Set **`videoThumbnail`** to use your own capture as the miniature (otherwise it
+  uses YouTube's thumbnail).
 - **`category`**: `"selected"` → the big "Selected games" cards on the homepage;
   `"shelf"` → the compact "More from the shelf" grid.
 - **`studio: true`** → the game also appears on `/studio` (Lost Medium Games).

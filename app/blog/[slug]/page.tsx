@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 import { getAllPosts, getPostBySlug } from "@/lib/content";
 import MarkdownBody from "@/components/MarkdownBody";
 import TagPill from "@/components/TagPill";
+import Lightbox from "@/components/Lightbox";
 import { monthYear } from "@/components/BlogCard";
 import type { Post } from "@/lib/types";
 
@@ -63,7 +64,9 @@ export default async function PostPage({
             ))}
           </div>
         )}
-        <MarkdownBody html={post.contentHtml} />
+        <Lightbox>
+          <MarkdownBody html={post.contentHtml} />
+        </Lightbox>
       </article>
     </main>
   );

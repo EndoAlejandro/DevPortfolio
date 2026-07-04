@@ -6,7 +6,7 @@ role: "Platformer · Lost Medium Games"
 summary: "A tight little platformer made under the Lost Medium Games banner — a playground for movement and level-feel."
 tags: ["Design", "Code"]
 studio: true
-category: "shelf"
+category: "selected"
 order: 1
 cover: "/images/projects/the-mighty-sequel.jpg"
 links:

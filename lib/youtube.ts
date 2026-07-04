@@ -1,15 +1,11 @@
-// Convert any common YouTube URL form to a privacy-friendly embed URL.
-// Supports:  youtube.com/watch?v=ID  ·  youtu.be/ID  ·  youtube.com/embed/ID
-// ·  youtube.com/shorts/ID  ·  bare 11-char video IDs.
-// Returns null if no video id can be found.
-export function youtubeEmbedUrl(input?: string): string | null {
+// Extract the 11-char video id from any common YouTube URL form.
+// Supports:  youtube.com/watch?v=ID · youtu.be/ID · youtube.com/embed/ID
+// · youtube.com/shorts/ID · a bare id. Returns null if none is found.
+export function youtubeId(input?: string): string | null {
   if (!input) return null;
   const raw = input.trim();
 
-  // Already a bare 11-char id.
-  if (/^[a-zA-Z0-9_-]{11}$/.test(raw)) {
-    return `https://www.youtube-nocookie.com/embed/${raw}`;
-  }
+  if (/^[a-zA-Z0-9_-]{11}$/.test(raw)) return raw;
 
   const patterns = [
     /(?:youtube\.com\/watch\?[^#]*\bv=)([a-zA-Z0-9_-]{11})/,
@@ -19,7 +15,19 @@ export function youtubeEmbedUrl(input?: string): string | null {
   ];
   for (const re of patterns) {
     const m = raw.match(re);
-    if (m) return `https://www.youtube-nocookie.com/embed/${m[1]}`;
+    if (m) return m[1];
   }
   return null;
+}
+
+/** Privacy-friendly embed URL, or null. */
+export function youtubeEmbedUrl(input?: string): string | null {
+  const id = youtubeId(input);
+  return id ? `https://www.youtube-nocookie.com/embed/${id}` : null;
+}
+
+/** Thumbnail image URL for a YouTube video, or null. */
+export function youtubeThumbnail(input?: string): string | null {
+  const id = youtubeId(input);
+  return id ? `https://img.youtube.com/vi/${id}/hqdefault.jpg` : null;
 }

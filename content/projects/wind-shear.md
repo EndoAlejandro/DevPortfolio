@@ -6,12 +6,15 @@ role: "Solo · Unity · Play free in browser"
 summary: "A top-down, point-and-click wave-survival game. Built around readable enemy waves and a tuned difficulty curve so every clear feels earned."
 tags: ["Design", "Systems", "Game feel"]
 studio: false
-category: "selected"
+category: "shelf"
 order: 2
 cover: "/images/projects/wind-shear.jpg"
+video: "https://youtu.be/oB24M7MirK0"
+gallery:
+  - "/images/projects/wind-shear-01.jpg"
+  - "/images/projects/wind-shear-02.jpg"
 links:
   play: "https://alejandroendo.itch.io/wind-shear"
-  page: "https://alejandroendo.itch.io/wind-shear"
 ---
 
 A top-down, point-and-click wave-survival game. **Wind Shear** is built around
