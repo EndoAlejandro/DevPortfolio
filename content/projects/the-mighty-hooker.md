@@ -3,7 +3,7 @@ title: "The Mighty Hooker"
 slug: "the-mighty-hooker"
 year: 2020
 genre: "Platformer"
-role: "Solo gameplay design and programming · Unity · C# · 1-month production"
+role: "Gameplay design and programming · Unity · C# · 1-month production"
 summary: "A skill-based 8-bit platformer built solo in one month, from GDD to finished release, as my first project during my game design master's degree."
 tags: ["Unity","Platformer","2D","Pixel Art","C#","Game Feel"]
 studio: false

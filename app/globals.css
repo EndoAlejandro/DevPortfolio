@@ -33,8 +33,11 @@
   /* ============================================================
      CORNER RADIUS — a little rounding. Bump up for rounder UI,
      down toward 0 for sharper. Every card/button/chip uses these.
+     RULE: rounded corners only on buttons + cards. Tags and plain
+     text stay rectangular (a border is fine, just square corners),
+     so --radius-chip is 0.
      ============================================================ */
-  --radius-chip: 7px;
+  --radius-chip: 0px;
   --radius-badge: 9px;
   --radius-btn: 11px;
   --radius-card: 16px;
@@ -154,7 +157,8 @@ body {
   font-size: 0.88em;
   background: color-mix(in srgb, var(--color-ink) 6%, transparent);
   border: 1px solid var(--color-line);
-  border-radius: 6px;
+  /* Inline code is plain text: keep the border, square the corners. */
+  border-radius: 0;
   padding: 0.1em 0.4em;
 }
 .markdown pre {
