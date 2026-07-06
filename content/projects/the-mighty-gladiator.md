@@ -5,7 +5,7 @@ genre: "Action Roguelite"
 role: "Gameplay design and programming · Unity · C# · 1-month production"
 summary: "Top-down 3D roguelite. Sword, shield, and parry combat against waves of enemies"
 tags: ["Unity", "3D", "Enemy AI", "Steering Behaviours", "Finite State Machines", "Melee Combat", "Roguelite"]
-year: 2020
+year: 2022
 studio: false
 category: "shelf"
 order: 3

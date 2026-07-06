@@ -1,7 +1,7 @@
 ---
 title: "The Mighty Hooker"
 slug: "the-mighty-hooker"
-year: 2020
+year: 2022
 genre: "Platformer"
 role: "Gameplay design and programming · Unity · C# · 1-month production"
 summary: "A skill-based 8-bit platformer built solo in one month, from GDD to finished release, as my first project during my game design master's degree."
@@ -43,3 +43,4 @@ Built in Unity, this was also where I picked up practical, hands-on skills in
 spritesheet-driven animation and tilemap-based level construction.
  
 Art by [ansimuz](https://ansimuz.itch.io/).
+Play it free in your browser on [itch.io](https://alejandroendo.itch.io/the-mighty-hooker).

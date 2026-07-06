@@ -1,6 +1,5 @@
 import Link from "next/link";
 import type { Project } from "@/lib/types";
-import TagPill from "./TagPill";
 import CoverImage from "./CoverImage";
 
 // Uniform catalog card used on /games. Links to the internal project page.
@@ -16,11 +15,6 @@ export default function GameCard({ project }: { project: Project }) {
           alt={project.title}
           sizes="(max-width: 768px) 100vw, 33vw"
         />
-        {project.genre && (
-          <span className="absolute top-3 left-3 z-10">
-            <TagPill variant="genre">{project.genre}</TagPill>
-          </span>
-        )}
       </div>
       <div className="px-[19px] pt-[17px] pb-[19px] flex flex-col flex-1">
         <div className="font-heading font-semibold text-[20px] tracking-[-0.01em] mb-[6px] group-hover:text-accent transition-colors">
