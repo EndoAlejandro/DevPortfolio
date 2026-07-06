@@ -12,7 +12,10 @@ const blogDir = path.join(contentDir, "blog");
 
 /** Render a Markdown string to an HTML string. */
 async function renderMarkdown(markdown: string): Promise<string> {
-  const processed = await remark().use(html).process(markdown);
+  // Content is author-controlled at build time (file-based, no user input),
+  // so we allow raw HTML embeds (<video>, <iframe>, <figure>) in Markdown.
+  // remark-html sanitizes by default, which would strip those tags.
+  const processed = await remark().use(html, { sanitize: false }).process(markdown);
   return processed.toString();
 }
 
@@ -28,7 +31,9 @@ function listSlugs(dir: string): string[] {
   if (!fs.existsSync(dir)) return [];
   return fs
     .readdirSync(dir)
-    .filter((file) => file.endsWith(".md"))
+    // Skip "_"-prefixed files so templates (_template.md) and drafts
+    // (_draft-*.md) live next to content without being published.
+    .filter((file) => file.endsWith(".md") && !file.startsWith("_"))
     .map((file) => file.replace(/\.md$/, ""));
 }
 

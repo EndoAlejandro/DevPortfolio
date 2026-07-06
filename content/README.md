@@ -11,13 +11,23 @@ folder and push to `main` — Vercel redeploys automatically (~1–2 min).
 The **filename becomes the URL slug**, so `noisy-boat.md` → `/projects/noisy-boat`.
 Keep filenames lowercase-with-dashes.
 
+> **Fastest way to start:** copy the ready-made template and edit it.
+> - Blog post → copy `content/blog/_template.md`
+> - Game/project → copy `content/projects/_template.md`
+>
+> Rename your copy to the slug you want (e.g. `wave-curve.md`) and set `slug:`
+> to match. Files whose name starts with `_` (like `_template.md` or a
+> `_draft-*.md` work-in-progress) are **ignored** — they never appear on the
+> site, so they're safe to keep around.
+
 After any change, run `npm run build` locally to catch mistakes before pushing.
 
 ---
 
 ## Add a game
 
-Create `content/projects/<slug>.md`:
+Easiest: **copy `content/projects/_template.md`**, rename it, and edit. The full
+front-matter (with comments) is below for reference — create `content/projects/<slug>.md`:
 
 ```markdown
 ---
@@ -63,7 +73,8 @@ Notes:
 
 ## Add a devlog post
 
-Create `content/blog/<slug>.md`:
+Easiest: **copy `content/blog/_template.md`**, rename it, and edit. The full
+front-matter (with comments) is below for reference — create `content/blog/<slug>.md`:
 
 ```markdown
 ---
@@ -88,18 +99,80 @@ Notes:
 
 ---
 
-## Add images
+## Formatting that works in the body
 
-Put files under `public/images/` and reference them by path (leading `/`):
+The write-up under the front-matter is normal **Markdown**, so classic blog
+formatting is available everywhere:
+
+- **Bold** (`**text**`), _italic_ (`_text_`), `inline code` (`` `text` ``)
+- [Links](https://example.com) (`[label](url)`) — styled in the accent color
+- Headings `##` / `###` / `####` (the page renders the title itself, so start
+  your body at `##`)
+- Bullet lists (`-`) and numbered lists (`1.`)
+- Blockquotes (`> ...`) — rendered with a raspberry accent bar
+- Fenced code blocks (```` ``` ````) and horizontal rules (`---`)
+
+---
+
+## Rich media: images, GIFs, video, embeds & captions
+
+You can drop images, GIFs, and video **between paragraphs** to make posts richer.
+Image and video files go under `public/` and are referenced by path (leading `/`):
 
 ```
-public/images/projects/noisy-boat.jpg   →  cover: "/images/projects/noisy-boat.jpg"
-public/images/blog/wave-curve.jpg        →  cover: "/images/blog/wave-curve.jpg"
-public/images/site/portrait.jpg          →  used in site.json / components
+public/images/blog/wave-curve.jpg     →  /images/blog/wave-curve.jpg
+public/videos/blog/wave-curve.mp4     →  /videos/blog/wave-curve.mp4
 ```
 
-Use reasonably sized images (e.g. cover art ~1600px wide). Next.js optimizes
-them automatically.
+> **Raw-HTML blocks** (the `<figure>` / `<video>` / `<iframe>` snippets below)
+> must have a **blank line above and below** them so Markdown renders them as
+> HTML instead of plain text.
+
+**Inline image** — plain Markdown; also gets click-to-zoom automatically:
+
+```markdown
+![Describe the image for accessibility](/images/blog/my-shot.jpg)
+```
+
+**Animated GIF** — a GIF is just an image, so the same syntax works:
+
+```markdown
+![Short looping clip](/images/blog/my-clip.gif)
+```
+
+**Image with a caption** — wrap it in a `<figure>`:
+
+```html
+<figure>
+  <img src="/images/blog/my-shot.jpg" alt="Describe the image" />
+  <figcaption>A short caption under the image.</figcaption>
+</figure>
+```
+
+**Self-hosted video clip** — put the file in `public/videos/...`:
+
+```html
+<video controls loop muted playsinline poster="/images/blog/clip-poster.jpg" width="100%">
+  <source src="/videos/blog/my-clip.mp4" type="video/mp4" />
+</video>
+```
+
+**YouTube / Vimeo embed** — the `video-embed` wrapper keeps it responsive (16:9
+on every screen). Swap `VIDEO_ID` for the video's id:
+
+```html
+<figure class="video-embed">
+  <iframe src="https://www.youtube.com/embed/VIDEO_ID" title="Gameplay clip" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</figure>
+```
+
+Notes:
+- Use reasonably sized images (cover art ~1600px wide). Next.js optimizes them.
+- **Keep self-hosted video small** (a few MB — short muted loops are ideal).
+  Large files bloat the git repo and eat Vercel bandwidth, so for long gameplay
+  **prefer a YouTube/Vimeo embed** over a self-hosted `.mp4`.
+- **`.mp4`/`.webm` are far smaller than a GIF** for the same motion — use a
+  video clip for anything longer than a second or two.
 
 ---
 

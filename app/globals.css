@@ -178,6 +178,47 @@ body {
   border-radius: var(--radius-card);
   border: 1px solid var(--color-line);
 }
+.markdown video {
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--radius-card);
+  border: 1px solid var(--color-line);
+  margin: 0 0 1.3em;
+}
+.markdown figure {
+  margin: 1.6em 0;
+}
+.markdown figure img,
+.markdown figure video {
+  display: block;
+  width: 100%;
+  margin: 0;
+}
+.markdown figcaption {
+  font-family: var(--font-mono);
+  font-size: 0.8em;
+  color: color-mix(in srgb, var(--color-ink) 55%, transparent);
+  text-align: center;
+  margin-top: 0.6em;
+}
+/* Responsive 16:9 wrapper for YouTube/Vimeo iframe embeds. */
+.markdown .video-embed {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 56.25%;
+  margin: 1.6em 0;
+  border-radius: var(--radius-card);
+  border: 1px solid var(--color-line);
+  overflow: hidden;
+}
+.markdown .video-embed iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
 .markdown hr {
   border: none;
   border-top: 1px solid var(--color-line);

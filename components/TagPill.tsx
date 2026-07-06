@@ -5,8 +5,8 @@ type TagVariant = "tag" | "genre";
 const variantClasses: Record<TagVariant, string> = {
   // Soft gray chip used for role/discipline tags on light cards.
   tag: "text-ink/70 bg-paper border border-line",
-  // Accent outline used for a game's genre badge.
-  genre: "text-accent border border-accent",
+  // Accent-colored genre badge.
+  genre: "text-accent",
 };
 
 export default function TagPill({
