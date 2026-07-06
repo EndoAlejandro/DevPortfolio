@@ -6,9 +6,9 @@ import ShelfCard from "@/components/ShelfCard";
 import type { StudioLang } from "@/lib/types";
 
 export const metadata: Metadata = {
-  title: "Lost Medium — Studio",
+  title: "Lost Medium - Game Studio",
   description:
-    "Lost Medium — a small game studio Alejandro Endo co-founded. The team, the story, and the games made under the studio banner.",
+    "Lost Medium - a small game studio Alejandro Endo co-founded. The team, the story, and the games made under the studio banner.",
 };
 
 function initials(name: string): string {
@@ -137,8 +137,8 @@ export default async function StudioPage({
         {studioGames.length === 0 ? (
           <p className="font-body text-[16px] text-ink/60">
             {lang === "es"
-              ? "Pronto habrá proyectos del estudio — vuelve pronto."
-              : "Studio projects are on the way — check back soon."}
+              ? "Pronto habrá proyectos del estudio - vuelve pronto."
+              : "Studio projects are on the way - check back soon."}
           </p>
         ) : (
           <>

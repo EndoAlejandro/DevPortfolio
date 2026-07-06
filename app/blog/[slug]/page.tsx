@@ -29,7 +29,7 @@ export async function generateMetadata({
   const { slug } = await params;
   const post = await load(slug);
   if (!post) return {};
-  return { title: `${post.title} — Alejandro Endo`, description: post.excerpt };
+  return { title: `${post.title} - Alejandro Endo`, description: post.excerpt };
 }
 
 export default async function PostPage({

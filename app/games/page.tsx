@@ -3,9 +3,9 @@ import { getAllProjects } from "@/lib/content";
 import GameCard from "@/components/GameCard";
 
 export const metadata: Metadata = {
-  title: "All games — Alejandro Endo",
+  title: "All games - Alejandro Endo",
   description:
-    "The full catalog of games and prototypes by Alejandro Endo — solo Unity builds, VR experiments, and jam projects.",
+    "The full catalog of games and prototypes by Alejandro Endo - Video Games and jam projects.",
 };
 
 export default async function GamesPage() {
@@ -28,7 +28,7 @@ export default async function GamesPage() {
           Everything I&apos;ve made
         </h1>
         <p className="text-[clamp(16px,1.6vw,18px)] leading-[1.6] text-ink/70 m-0">
-          The full shelf — shipped solo builds and quick prototypes alike. Each
+          The full shelf - shipped solo builds and quick prototypes alike. Each
           card opens its page, where you can watch it, read the notes, and play.
         </p>
       </header>

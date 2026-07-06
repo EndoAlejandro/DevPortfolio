@@ -29,9 +29,9 @@ const mulish = Mulish({
 });
 
 export const metadata: Metadata = {
-  title: "Alejandro Endo — Game Developer",
+  title: "Alejandro Endo - Game Developer",
   description:
-    "Portfolio of Alejandro Endo — interactive-media designer and solo Unity game developer (VR & mobile). Selected games, skills, and a devlog.",
+    "Portfolio of Alejandro Endo - Game developer and QA engineer. Selected games, skills, and a devlog.",
 };
 
 export default function RootLayout({

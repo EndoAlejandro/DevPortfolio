@@ -4,9 +4,9 @@ import BlogCard from "@/components/BlogCard";
 import BlogFeaturedCard from "@/components/BlogFeaturedCard";
 
 export const metadata: Metadata = {
-  title: "Devlog — Alejandro Endo",
+  title: "Devlog - Alejandro Endo",
   description:
-    "Notes from the workbench — how the games get made: systems, tooling, VR, and game feel.",
+    "Notes from the workbench - how the games get made: systems, tooling, VR, and game feel.",
 };
 
 export default async function BlogIndex() {
@@ -25,7 +25,7 @@ export default async function BlogIndex() {
           Notes from the workbench
         </h1>
         <p className="text-[clamp(16px,1.6vw,18px)] leading-[1.6] text-ink/70 m-0">
-          How these games actually get made — the systems, the tooling, the VR
+          How these games actually get made - the systems, the tooling, the VR
           experiments, and the pursuit of game feel.
         </p>
       </header>

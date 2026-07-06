@@ -3,7 +3,7 @@
     "badge": "Solo game developer · VR & mobile · open to work",
     "heading": "Designer by profession, game developer",
     "highlight": "by choice.",
-    "subcopy": "I'm Alejandro Endo — an interactive-media designer with 6 years in software and 3.5 focused on Unity. Since 2021 I've lived in VR, chasing the elusive craft of game feel across a shelf of solo-built games.",
+    "subcopy": "I'm Alejandro Endo - an interactive-media designer with 6 years in software and 3.5 focused on Unity. Since 2021 I've lived in VR, chasing the elusive craft of game feel across a shelf of solo-built games.",
     "socials": [
       { "label": "itch.io", "href": "https://alejandroendo.itch.io/", "external": true },
       { "label": "Google Play", "href": "#", "external": true },
@@ -48,10 +48,10 @@
     "heading": "Where I've worked",
     "subcopy": "Teams and clients I've built software and interactive experiences for.",
     "items": [
-      { "name": "Company One" },
-      { "name": "Company Two" },
-      { "name": "Company Three" },
-      { "name": "Company Four" }
+      { "name": "Alternova", "logo": "/images/site/alternova.png" },
+      { "name": "Bacon Games", "logo": "/images/site/bacon-games.png" },
+      { "name": "Electronic Arts", "logo": "/images/site/electronic-art.svg" },
+      { "name": "Carvajal", "logo": "/images/site/carvajal.png" }
     ]
   },
   "studio": {

@@ -31,7 +31,7 @@ export async function generateMetadata({
   const project = await load(slug);
   if (!project) return {};
   return {
-    title: `${project.title} — Alejandro Endo`,
+    title: `${project.title} - Alejandro Endo`,
     description: project.summary,
   };
 }
@@ -122,7 +122,7 @@ export default async function ProjectPage({
         <div className="relative w-full aspect-[16/10] rounded-card-lg overflow-hidden border border-line bg-[#DDDDDD] grid place-items-center mb-10">
           <CoverImage
             src={project.cover}
-            alt={`${project.title} — key art`}
+            alt={`${project.title} - key art`}
             sizes="(max-width: 1000px) 100vw, 1000px"
           />
         </div>
@@ -144,7 +144,7 @@ export default async function ProjectPage({
                   /* eslint-disable-next-line @next/next/no-img-element */
                   <img
                     src={videoThumb}
-                    alt={`${project.title} — gameplay`}
+                    alt={`${project.title} - gameplay`}
                     className="absolute inset-0 w-full h-full object-cover opacity-90 group-hover:opacity-100 transition-opacity !cursor-pointer"
                   />
                 )}

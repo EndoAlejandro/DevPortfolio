@@ -1,3 +1,6 @@
+"use client";
+
+import { useState } from "react";
 import type { SiteContent } from "@/lib/types";
 
 export default function Employers({
@@ -5,6 +8,9 @@ export default function Employers({
 }: {
   employers: SiteContent["employers"];
 }) {
+  const [hovered, setHovered] = useState<string | null>(null);
+  const [pos, setPos] = useState({ x: 0, y: 0 });
+
   if (!employers?.items?.length) return null;
 
   return (
@@ -20,40 +26,42 @@ export default function Employers({
         )}
       </div>
 
-      <div className="grid grid-cols-[repeat(auto-fit,minmax(180px,1fr))] gap-4">
-        {employers.items.map((item) => {
-          const inner = item.logo ? (
-            /* eslint-disable-next-line @next/next/no-img-element */
-            <img
-              src={item.logo}
-              alt={item.name}
-              className="max-h-9 w-auto object-contain opacity-80"
-            />
+      <div className="flex flex-wrap items-center gap-x-12 gap-y-8">
+        {employers.items.map((item) =>
+          item.logo ? (
+            <div
+              key={item.name}
+              className="h-14 w-[150px]"
+              onMouseEnter={() => setHovered(item.name)}
+              onMouseLeave={() => setHovered(null)}
+              onMouseMove={(e) => setPos({ x: e.clientX, y: e.clientY })}
+            >
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={item.logo}
+                alt={item.name}
+                className="h-full w-full object-contain"
+              />
+            </div>
           ) : (
-            <span className="font-heading font-semibold text-[18px] text-ink/70">
+            <span
+              key={item.name}
+              className="font-heading font-semibold text-[18px] text-ink/70"
+            >
               {item.name}
             </span>
-          );
-
-          const box = "border border-line rounded-card bg-card grid place-items-center h-[92px] px-5 transition-colors hover:border-ink/40";
-
-          return item.href ? (
-            <a
-              key={item.name}
-              href={item.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              className={`${box} no-underline`}
-            >
-              {inner}
-            </a>
-          ) : (
-            <div key={item.name} className={box}>
-              {inner}
-            </div>
-          );
-        })}
+          )
+        )}
       </div>
+
+      {hovered && (
+        <div
+          className="fixed z-50 pointer-events-none font-mono text-[12px] bg-ink text-paper rounded px-2 py-1 whitespace-nowrap"
+          style={{ left: pos.x + 14, top: pos.y + 16 }}
+        >
+          {hovered}
+        </div>
+      )}
     </section>
   );
 }
