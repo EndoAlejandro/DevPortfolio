@@ -1,4 +1,7 @@
+"use client";
+
 import Link from "next/link";
+import { useEffect, useState } from "react";
 
 const links = [
   { label: "Games", href: "/games" },
@@ -9,8 +12,22 @@ const links = [
 ];
 
 export default function Nav() {
+  // Strengthen the sticky bar (more opaque + soft shadow) once the page scrolls.
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 8);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
   return (
-    <nav className="sticky top-0 z-[60] bg-paper/[0.86] backdrop-blur-[10px] border-b border-line">
+    <nav
+      className={`sticky top-0 z-[60] backdrop-blur-[10px] border-b border-line transition-[background,box-shadow] duration-300 ${
+        scrolled ? "bg-paper/95 shadow-soft-sm" : "bg-paper/[0.86]"
+      }`}
+    >
       <div className="max-w-[1180px] mx-auto px-7 py-[15px] flex items-center justify-between gap-6">
         {/* Logo — Alejandro Endo monogram + wordmark */}
         <Link href="/" className="flex items-center gap-[11px] no-underline">
@@ -31,7 +48,7 @@ export default function Nav() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-ink no-underline hover:text-accent transition-colors"
+                className="relative text-ink no-underline hover:text-accent transition-colors after:absolute after:left-0 after:-bottom-1 after:h-[1.5px] after:w-full after:bg-accent after:origin-left after:scale-x-0 after:transition-transform after:duration-200 hover:after:scale-x-100"
               >
                 {link.label}
               </Link>

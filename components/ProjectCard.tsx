@@ -22,6 +22,7 @@ export default function ProjectCard({
           src={cover}
           alt={title}
           sizes="(max-width: 768px) 100vw, 50vw"
+          className="transition-transform duration-500 group-hover:scale-[1.04]"
         />
       </div>
     </div>
@@ -86,7 +87,7 @@ export default function ProjectCard({
 
   return (
     <article
-      className={`flex flex-wrap ${imageRight ? "flex-wrap-reverse" : ""} border border-line rounded-card-lg overflow-hidden bg-card shadow-soft`}
+      className={`group flex flex-wrap ${imageRight ? "flex-wrap-reverse" : ""} border border-line rounded-card-lg overflow-hidden bg-card shadow-soft`}
     >
       {imageRight ? (
         <>

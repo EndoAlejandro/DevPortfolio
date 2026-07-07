@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { getAllPosts } from "@/lib/content";
 import BlogCard from "@/components/BlogCard";
 import BlogFeaturedCard from "@/components/BlogFeaturedCard";
+import Reveal from "@/components/Reveal";
 
 export const metadata: Metadata = {
   title: "Devlog - Alejandro Endo",
@@ -17,7 +18,7 @@ export default async function BlogIndex() {
   return (
     <main className="max-w-[1180px] mx-auto px-7 pt-[74px] pb-24">
       {/* Masthead */}
-      <header className="mb-10 max-w-[720px]">
+      <Reveal className="mb-10 max-w-[720px]">
         <div className="font-mono text-[12px] font-medium tracking-[0.16em] uppercase text-accent mb-3">
           Devlog
         </div>
@@ -28,12 +29,12 @@ export default async function BlogIndex() {
           How these games actually get made - the systems, the tooling, the VR
           experiments, and the pursuit of game feel.
         </p>
-      </header>
+      </Reveal>
 
       {featured && (
-        <div className="mb-8">
+        <Reveal className="mb-8">
           <BlogFeaturedCard post={featured} />
-        </div>
+        </Reveal>
       )}
 
       {rest.length > 0 && (
@@ -42,8 +43,10 @@ export default async function BlogIndex() {
             All posts
           </div>
           <div className="grid grid-cols-[repeat(auto-fill,minmax(300px,1fr))] gap-6">
-            {rest.map((post) => (
-              <BlogCard key={post.slug} post={post} />
+            {rest.map((post, i) => (
+              <Reveal key={post.slug} delay={Math.min(i, 6) * 60}>
+                <BlogCard post={post} />
+              </Reveal>
             ))}
           </div>
         </>

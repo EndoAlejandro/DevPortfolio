@@ -96,6 +96,66 @@ body {
   }
 }
 
+/* ============================================================
+   MOTION — whisper-subtle, CSS-only. Elements with .rise start
+   hidden and settle up into place once on load. Stagger via an
+   inline animation-delay. See the reduced-motion guard below,
+   which neutralizes all of this for users who opt out.
+   ============================================================ */
+@keyframes riseIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.rise {
+  opacity: 0;
+  animation: riseIn 0.5s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+/* Scroll-reveal: elements start hidden + nudged down, then settle into place
+   when the <Reveal> wrapper adds .is-visible as they enter the viewport.
+   Stagger is applied per element via an inline transition-delay. */
+.reveal {
+  opacity: 0;
+  transform: translateY(14px);
+  transition:
+    opacity 0.55s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform;
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* Respect the OS "reduce motion" setting: show everything instantly. */
+@media (prefers-reduced-motion: reduce) {
+  .rise {
+    opacity: 1;
+    animation: none;
+  }
+  /* Never leave reveal content hidden for reduced-motion users. */
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
 /* Rendered Markdown body (project write-ups + blog posts). */
 .markdown {
   font-family: var(--font-body);

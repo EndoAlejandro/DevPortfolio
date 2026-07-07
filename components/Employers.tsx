@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import type { SiteContent } from "@/lib/types";
+import Reveal from "./Reveal";
 
 export default function Employers({
   employers,
@@ -15,7 +16,7 @@ export default function Employers({
 
   return (
     <section className="max-w-[1180px] mx-auto px-7 pt-8 pb-16">
-      <div className="mb-8">
+      <Reveal className="mb-8">
         <div className="font-mono text-[12px] font-medium tracking-[0.16em] uppercase text-accent mb-3">
           {employers.heading}
         </div>
@@ -24,9 +25,9 @@ export default function Employers({
             {employers.subcopy}
           </p>
         )}
-      </div>
+      </Reveal>
 
-      <div className="flex flex-wrap items-center gap-x-12 gap-y-8">
+      <Reveal delay={80} className="flex flex-wrap items-center gap-x-12 gap-y-8">
         {employers.items.map((item) =>
           item.logo ? (
             <div
@@ -52,7 +53,7 @@ export default function Employers({
             </span>
           )
         )}
-      </div>
+      </Reveal>
 
       {hovered && (
         <div

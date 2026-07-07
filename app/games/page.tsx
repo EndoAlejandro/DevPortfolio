@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { getAllProjects } from "@/lib/content";
 import GameCard from "@/components/GameCard";
+import Reveal from "@/components/Reveal";
 
 export const metadata: Metadata = {
   title: "All games - Alejandro Endo",
@@ -20,7 +21,7 @@ export default async function GamesPage() {
 
   return (
     <main className="max-w-[1180px] mx-auto px-7 pt-[74px] pb-24">
-      <header className="mb-10 max-w-[720px]">
+      <Reveal className="mb-10 max-w-[720px]">
         <div className="font-mono text-[12px] font-medium tracking-[0.16em] uppercase text-accent mb-3">
           All games
         </div>
@@ -31,11 +32,13 @@ export default async function GamesPage() {
           The full shelf - shipped solo builds and quick prototypes alike. Each
           card opens its page, where you can watch it, read the notes, and play.
         </p>
-      </header>
+      </Reveal>
 
       <div className="grid grid-cols-[repeat(auto-fill,minmax(260px,1fr))] gap-6">
-        {all.map((project) => (
-          <GameCard key={project.slug} project={project} />
+        {all.map((project, i) => (
+          <Reveal key={project.slug} delay={Math.min(i, 6) * 60}>
+            <GameCard project={project} />
+          </Reveal>
         ))}
       </div>
     </main>

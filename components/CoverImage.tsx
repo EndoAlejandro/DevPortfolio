@@ -7,14 +7,22 @@ export default function CoverImage({
   src,
   alt,
   sizes = "(max-width: 768px) 100vw, 33vw",
+  className = "",
 }: {
   src?: string;
   alt: string;
   sizes?: string;
+  className?: string;
 }) {
   if (src) {
     return (
-      <Image src={src} alt={alt} fill sizes={sizes} className="object-cover" />
+      <Image
+        src={src}
+        alt={alt}
+        fill
+        sizes={sizes}
+        className={`object-cover ${className}`.trim()}
+      />
     );
   }
   return (

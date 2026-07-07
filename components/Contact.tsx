@@ -1,9 +1,10 @@
 import type { SiteContent } from "@/lib/types";
+import Reveal from "./Reveal";
 
 export default function Contact({ contact }: { contact: SiteContent["contact"] }) {
   return (
     <section id="contact" className="bg-accent scroll-mt-20">
-      <div className="max-w-[1180px] mx-auto px-7 py-[92px] text-center text-paper">
+      <Reveal className="max-w-[1180px] mx-auto px-7 py-[92px] text-center text-paper">
         <div className="font-mono text-[12px] font-medium tracking-[0.16em] uppercase text-paper/[0.72] mb-[18px]">
           Let&apos;s talk
         </div>
@@ -44,7 +45,7 @@ export default function Contact({ contact }: { contact: SiteContent["contact"] }
             </a>
           ))}
         </div>
-      </div>
+      </Reveal>
     </section>
   );
 }

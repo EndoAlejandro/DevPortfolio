@@ -14,6 +14,7 @@ export default function GameCard({ project }: { project: Project }) {
           src={project.cover}
           alt={project.title}
           sizes="(max-width: 768px) 100vw, 33vw"
+          className="transition-transform duration-500 group-hover:scale-[1.04]"
         />
       </div>
       <div className="px-[19px] pt-[17px] pb-[19px] flex flex-col flex-1">

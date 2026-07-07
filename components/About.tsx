@@ -1,4 +1,5 @@
 import type { SiteContent } from "@/lib/types";
+import Reveal from "./Reveal";
 
 export default function About({ about }: { about: SiteContent["about"] }) {
   return (
@@ -7,7 +8,7 @@ export default function About({ about }: { about: SiteContent["about"] }) {
       className="max-w-[1180px] mx-auto px-7 py-24 scroll-mt-20 flex flex-wrap gap-14 items-center"
     >
       {/* Portrait with accent ring */}
-      <div className="flex-[0_1_280px] min-w-[240px] flex justify-center">
+      <Reveal className="flex-[0_1_280px] min-w-[240px] flex justify-center">
         <div className="relative w-[248px] h-[248px]">
           <div className="absolute inset-[-8px] rounded-full border border-accent" />
           <div className="relative w-[248px] h-[248px] rounded-full border border-line bg-[#DDDDDD] grid place-items-center overflow-hidden">
@@ -16,10 +17,10 @@ export default function About({ about }: { about: SiteContent["about"] }) {
             </span>
           </div>
         </div>
-      </div>
+      </Reveal>
 
       {/* Copy + stats */}
-      <div className="flex-1 basis-[460px] min-w-[300px]">
+      <Reveal delay={90} className="flex-1 basis-[460px] min-w-[300px]">
         <div className="font-mono text-[12px] font-medium tracking-[0.16em] uppercase text-accent mb-[14px]">
           About
         </div>
@@ -48,7 +49,7 @@ export default function About({ about }: { about: SiteContent["about"] }) {
             </div>
           ))}
         </div>
-      </div>
+      </Reveal>
     </section>
   );
 }

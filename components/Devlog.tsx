@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { Post } from "@/lib/types";
+import Reveal from "./Reveal";
 
 // Format an ISO date ("2026-05-12") as "2026.05" for the compact log list.
 function shortDate(iso: string): string {
@@ -12,7 +13,7 @@ export default function Devlog({ posts }: { posts: Post[] }) {
       id="log"
       className="max-w-[1180px] mx-auto px-7 pt-5 pb-24 scroll-mt-20"
     >
-      <div className="flex items-end justify-between gap-5 flex-wrap mb-8">
+      <Reveal className="flex items-end justify-between gap-5 flex-wrap mb-8">
         <div>
           <div className="font-mono text-[12px] font-medium tracking-[0.16em] uppercase text-accent mb-3">
             Devlog
@@ -27,14 +28,14 @@ export default function Devlog({ posts }: { posts: Post[] }) {
         >
           View all posts →
         </Link>
-      </div>
+      </Reveal>
 
-      <div className="border border-line rounded-card overflow-hidden bg-card shadow-soft-sm">
+      <Reveal className="border border-line rounded-card overflow-hidden bg-card shadow-soft-sm">
         {posts.map((post, i) => (
           <Link
             key={post.slug}
             href={`/blog/${post.slug}`}
-            className={`flex items-center justify-between gap-5 px-7 py-6 no-underline text-inherit flex-wrap transition-colors hover:bg-paper ${
+            className={`flex items-center justify-between gap-5 px-7 py-6 no-underline text-inherit flex-wrap transition-[background,padding] duration-200 hover:bg-paper hover:pl-8 ${
               i < posts.length - 1 ? "border-b border-line" : ""
             }`}
           >
@@ -51,7 +52,7 @@ export default function Devlog({ posts }: { posts: Post[] }) {
             </span>
           </Link>
         ))}
-      </div>
+      </Reveal>
     </section>
   );
 }

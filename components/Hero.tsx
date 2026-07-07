@@ -10,19 +10,31 @@ export default function Hero({ hero }: { hero: SiteContent["hero"] }) {
       <div className="max-w-[1180px] mx-auto px-7 pt-20 pb-[88px] flex flex-wrap gap-14 items-center">
         {/* Left column — copy */}
         <div className="flex-1 basis-[440px] min-w-[300px]">
-          <div className="font-mono text-[12px] font-medium tracking-[0.16em] uppercase text-accent mb-[26px]">
+          <div
+            className="rise font-mono text-[12px] font-medium tracking-[0.16em] uppercase text-accent mb-[26px]"
+            style={{ animationDelay: "60ms" }}
+          >
             {hero.badge}
           </div>
 
-          <h1 className="font-heading font-bold text-[clamp(38px,6vw,66px)] leading-[1.02] tracking-[-0.025em] m-0 mb-6">
+          <h1
+            className="rise font-heading font-bold text-[clamp(38px,6vw,66px)] leading-[1.02] tracking-[-0.025em] m-0 mb-6"
+            style={{ animationDelay: "120ms" }}
+          >
             {hero.heading} <span className="text-accent">{hero.highlight}</span>
           </h1>
 
-          <p className="text-[clamp(16px,1.6vw,18.5px)] leading-[1.62] max-w-[540px] text-paper/[0.68] mb-[34px]">
+          <p
+            className="rise text-[clamp(16px,1.6vw,18.5px)] leading-[1.62] max-w-[540px] text-paper/[0.68] mb-[34px]"
+            style={{ animationDelay: "180ms" }}
+          >
             {hero.subcopy}
           </p>
 
-          <div className="flex flex-wrap gap-3 mb-8">
+          <div
+            className="rise flex flex-wrap gap-3 mb-8"
+            style={{ animationDelay: "240ms" }}
+          >
             <Link
               href="/#work"
               className="font-heading font-semibold text-[15px] text-paper bg-accent rounded-btn px-6 py-[13px] no-underline transition-opacity hover:opacity-[0.88]"
@@ -37,7 +49,10 @@ export default function Hero({ hero }: { hero: SiteContent["hero"] }) {
             </Link>
           </div>
 
-          <div className="flex flex-wrap gap-[9px] font-mono text-[12px] font-medium tracking-[0.03em]">
+          <div
+            className="rise flex flex-wrap gap-[9px] font-mono text-[12px] font-medium tracking-[0.03em]"
+            style={{ animationDelay: "300ms" }}
+          >
             {hero.socials.map((s) => (
               <a
                 key={s.label}
@@ -53,7 +68,10 @@ export default function Hero({ hero }: { hero: SiteContent["hero"] }) {
         </div>
 
         {/* Right column — portrait with accent offset square */}
-        <div className="flex-[0_1_340px] min-w-[260px] flex justify-center relative">
+        <div
+          className="rise flex-[0_1_340px] min-w-[260px] flex justify-center relative"
+          style={{ animationDelay: "380ms" }}
+        >
           <div className="relative w-[300px] h-[300px]">
             <div className="absolute top-4 left-4 w-[300px] h-[300px] rounded-card-xl bg-accent" />
             <div className="relative w-[300px] h-[300px] rounded-card-xl border border-black/15 bg-[#DDDDDD] grid place-items-center overflow-hidden">

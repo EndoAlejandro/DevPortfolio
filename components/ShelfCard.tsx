@@ -7,13 +7,14 @@ export default function ShelfCard({ project }: { project: Project }) {
   return (
     <Link
       href={`/projects/${project.slug}`}
-      className="block no-underline text-inherit border border-line rounded-card overflow-hidden bg-card shadow-soft-sm transition-[transform,box-shadow] duration-150 hover:-translate-y-1 hover:shadow-lift"
+      className="group block no-underline text-inherit border border-line rounded-card overflow-hidden bg-card shadow-soft-sm transition-[transform,box-shadow] duration-150 hover:-translate-y-1 hover:shadow-lift"
     >
       <div className="relative w-full aspect-[4/3] bg-[#DDDDDD] border-b border-line grid place-items-center overflow-hidden">
         <CoverImage
           src={project.cover}
           alt={project.title}
           sizes="(max-width: 768px) 100vw, 25vw"
+          className="transition-transform duration-500 group-hover:scale-[1.04]"
         />
       </div>
       <div className="px-[19px] pt-[17px] pb-[19px]">
