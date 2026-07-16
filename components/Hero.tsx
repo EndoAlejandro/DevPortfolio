@@ -1,11 +1,19 @@
 import Link from "next/link";
 import type { SiteContent } from "@/lib/types";
 
-export default function Hero({ hero }: { hero: SiteContent["hero"] }) {
+export default function Hero({
+  hero,
+  stats,
+  resumeHref,
+}: {
+  hero: SiteContent["hero"];
+  stats: SiteContent["about"]["stats"];
+  resumeHref: string;
+}) {
   return (
     <header
       id="top"
-      className="bg-ink text-paper border-b border-[#2A2A2A]"
+      className="bg-ink text-paper border-b border-[#2A2A2A] scroll-mt-20"
     >
       <div className="max-w-[1180px] mx-auto px-7 pt-20 pb-[88px] flex flex-wrap gap-14 items-center">
         {/* Left column — copy */}
@@ -41,12 +49,13 @@ export default function Hero({ hero }: { hero: SiteContent["hero"] }) {
             >
               See my games →
             </Link>
-            <Link
-              href="/#contact"
+            <a
+              href={resumeHref}
+              download
               className="font-heading font-semibold text-[15px] text-paper bg-transparent border border-paper/[0.28] rounded-btn px-6 py-[13px] no-underline transition-colors hover:border-accent"
             >
               Download CV
-            </Link>
+            </a>
           </div>
 
           <div
@@ -63,6 +72,22 @@ export default function Hero({ hero }: { hero: SiteContent["hero"] }) {
               >
                 {s.label}
               </a>
+            ))}
+          </div>
+
+          <div
+            className="rise flex gap-9 flex-wrap mt-9"
+            style={{ animationDelay: "340ms" }}
+          >
+            {stats.map((stat) => (
+              <div key={stat.label}>
+                <div className="font-heading font-bold text-[36px] text-accent leading-none">
+                  {stat.value}
+                </div>
+                <div className="font-mono text-[11px] font-medium uppercase text-paper/55 mt-[6px] tracking-[0.04em]">
+                  {stat.label}
+                </div>
+              </div>
             ))}
           </div>
         </div>

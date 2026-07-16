@@ -1,19 +1,22 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 
 const links = [
-  { label: "Games", href: "/games" },
+  { label: "Home", href: "/#top" },
   { label: "Skills", href: "/#skills" },
-  { label: "About", href: "/#about" },
-  { label: "Studio", href: "/studio" },
-  { label: "Log", href: "/blog" },
+  { label: "Contact", href: "/#contact" },
+  { label: "Games", href: "/games" },
 ];
 
 export default function Nav() {
   // Strengthen the sticky bar (more opaque + soft shadow) once the page scrolls.
   const [scrolled, setScrolled] = useState(false);
+  // On /studio the bar adopts the studio palette; `.theme-studio` redefines the
+  // color vars so every utility below re-resolves to cream + pine.
+  const isStudio = usePathname() === "/studio";
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8);
@@ -24,9 +27,9 @@ export default function Nav() {
 
   return (
     <nav
-      className={`sticky top-0 z-[60] backdrop-blur-[10px] border-b border-line transition-[background,box-shadow] duration-300 ${
-        scrolled ? "bg-paper/95 shadow-soft-sm" : "bg-paper/[0.86]"
-      }`}
+      className={`sticky top-0 z-[60] backdrop-blur-[10px] border-b border-line transition-[background,box-shadow,color] duration-300 ${
+        isStudio ? "theme-studio" : ""
+      } ${scrolled ? "bg-paper/95 shadow-soft-sm" : "bg-paper/[0.86]"}`}
     >
       <div className="max-w-[1180px] mx-auto px-7 py-[15px] flex items-center justify-between gap-6">
         {/* Logo — Alejandro Endo monogram + wordmark */}
@@ -55,10 +58,10 @@ export default function Nav() {
             ))}
           </div>
           <Link
-            href="/#contact"
+            href="/studio"
             className="font-heading font-semibold text-[14px] text-paper bg-accent rounded-badge px-[18px] py-[9px] no-underline transition-opacity hover:opacity-85"
           >
-            Hire me
+            Studio
           </Link>
         </div>
       </div>

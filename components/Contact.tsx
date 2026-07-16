@@ -26,6 +26,7 @@ export default function Contact({ contact }: { contact: SiteContent["contact"] }
           </a>
           <a
             href={contact.resumeHref}
+            download
             className="font-heading font-semibold text-[16px] text-paper bg-ink rounded-btn px-[26px] py-[14px] no-underline transition-transform hover:-translate-y-0.5"
           >
             Download CV (PDF)

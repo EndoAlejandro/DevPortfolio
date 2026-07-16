@@ -4,22 +4,23 @@ import Reveal from "@/components/Reveal";
 import ProjectCard from "@/components/ProjectCard";
 import ShelfCard from "@/components/ShelfCard";
 import Skills from "@/components/Skills";
-import About from "@/components/About";
 import Employers from "@/components/Employers";
-import Devlog from "@/components/Devlog";
 import Contact from "@/components/Contact";
-import { getAllPosts, getAllProjects, getSite } from "@/lib/content";
+import { getAllProjects, getSite } from "@/lib/content";
 
 export default async function Home() {
   const site = getSite();
   const projects = await getAllProjects();
-  const posts = await getAllPosts();
   const selected = projects.filter((p) => p.category === "selected");
   const shelf = projects.filter((p) => p.category === "shelf");
 
   return (
     <main>
-      <Hero hero={site.hero} />
+      <Hero
+        hero={site.hero}
+        stats={site.about.stats}
+        resumeHref={site.contact.resumeHref}
+      />
 
       <Employers employers={site.employers} />
 
@@ -82,8 +83,6 @@ export default async function Home() {
       </section>
 
       <Skills skills={site.skills} />
-      <About about={site.about} />
-      <Devlog posts={posts} />
       <Contact contact={site.contact} />
     </main>
   );
