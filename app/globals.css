@@ -18,12 +18,12 @@
   /* ============================================================
      PALETTE — change these six to recolor the whole site.
      ============================================================ */
-  --color-paper: #eeeeee; /* page background */
-  --color-ink: #1a1a1a; /* text + dark sections */
-  --color-accent: #831c91; /* primary accent (purple) */
-  --color-accent-slate: #40607f; /* alt accent (unused by default) */
-  --color-card: #fcfcfc; /* card surface on light bg */
-  --color-line: #dddddd; /* hairline borders on light bg */
+  --color-paper: #FFFBF7; /* page background */
+  --color-ink: #252525; /* text + dark sections */
+  --color-accent: #33E26B; /* primary accent (purple) */
+  --color-accent-slate: #b13e53; /* alt accent (unused by default) */
+  --color-card: #FFFEFC; /* card surface on light bg */
+  --color-line: #252525; /* hairline borders on light bg */
 
   /* Soft shadows */
   --shadow-soft-sm: 0 4px 16px rgba(0, 0, 0, 0.05);
@@ -38,11 +38,11 @@
      so --radius-chip is 0.
      ============================================================ */
   --radius-chip: 0px;
-  --radius-badge: 9px;
-  --radius-btn: 11px;
-  --radius-card: 16px;
-  --radius-card-lg: 20px;
-  --radius-card-xl: 22px;
+  --radius-badge: 5px;
+  --radius-btn: 5px;
+  --radius-card: 5px;
+  --radius-card-lg: 5px;
+  --radius-card-xl: 5px;
 
   /* ============================================================
      FONTS — swap the family in app/layout.tsx; keep names in sync.
