@@ -5,7 +5,7 @@ export default function Contact({ contact }: { contact: SiteContent["contact"] }
   return (
     <section id="contact" className="bg-accent scroll-mt-20">
       <Reveal className="max-w-[1180px] mx-auto px-7 py-[92px] text-center text-paper">
-        <div className="font-mono text-[12px] font-medium tracking-[0.16em] uppercase text-paper/[0.72] mb-[18px]">
+        <div className="font-label text-[12px] font-medium tracking-[0.16em] uppercase text-paper/[0.72] mb-[18px]">
           Let&apos;s talk
         </div>
         <h2 className="font-heading font-bold text-[clamp(32px,5vw,56px)] leading-[1.06] max-w-[780px] mx-auto mb-[22px] tracking-[-0.025em]">
@@ -33,7 +33,19 @@ export default function Contact({ contact }: { contact: SiteContent["contact"] }
           </a>
         </div>
 
-        <div className="flex gap-[10px] justify-center flex-wrap font-mono text-[12.5px] font-medium">
+        {contact.email && (
+          <p className="text-[14px] text-paper/[0.92] mb-8">
+            Or email me at{" "}
+            <a
+              href={`mailto:${contact.email}`}
+              className="font-medium text-paper underline underline-offset-[3px] decoration-paper/50 hover:decoration-paper transition-colors"
+            >
+              {contact.email}
+            </a>
+          </p>
+        )}
+
+        <div className="flex gap-[10px] justify-center flex-wrap font-label text-[12.5px] font-medium">
           {contact.socials.map((s) => (
             <a
               key={s.label}

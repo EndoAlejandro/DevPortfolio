@@ -46,9 +46,11 @@ videoThumbnail: "/images/projects/noisy-boat-clip.jpg"  # optional (defaults to 
 gallery:                                        # optional extra screenshots
   - "/images/projects/noisy-boat-01.jpg"
 links:
-  play: "https://alejandroendo.itch.io/noisy-boat"   # "Play in browser"
-  page: "https://alejandroendo.itch.io/noisy-boat"   # "View on itch.io"
+  play: "https://alejandroendo.itch.io/noisy-boat"   # primary button
+  page: "https://alejandroendo.itch.io/noisy-boat"   # secondary link
   source: ""                                          # optional repo link
+  playLabel: ""                # optional — override the button text
+  pageLabel: ""                # optional — override the secondary link text
 featured: true                # optional highlight flag
 ---
 
@@ -65,6 +67,11 @@ Notes:
   the video full-screen. The top of the page always shows the `cover` image.
   Set **`videoThumbnail`** to use your own capture as the miniature (otherwise it
   uses YouTube's thumbnail).
+- **Link button text** adapts to where `play`/`page` point (itch.io → "Play in
+  browser", Google Play → "Get it on Google Play", Reddit → "Read the thread",
+  and so on). Set **`playLabel`** / **`pageLabel`** to override when the auto text
+  doesn't fit. If a project has no browser build, point `play` at its store/itch
+  page and the button reads "View on ..." instead of the misleading "Play in browser".
 - **`category`**: `"selected"` → the big "Selected games" cards on the homepage;
   `"shelf"` → the compact "More from the shelf" grid.
 - **`studio: true`** → the game also appears on `/studio` (Lost Medium Games).

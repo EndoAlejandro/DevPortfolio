@@ -6,7 +6,7 @@ export default function Skills({ skills }: { skills: SiteContent["skills"] }) {
     <section id="skills" className="bg-ink text-paper mt-[52px] scroll-mt-20">
       <div className="max-w-[1180px] mx-auto px-7 py-[88px]">
         <Reveal className="mb-12 max-w-[640px]">
-          <div className="font-mono text-[12px] font-medium tracking-[0.16em] uppercase text-accent mb-3">
+          <div className="font-label text-[12px] font-medium tracking-[0.16em] uppercase text-accent mb-3">
             What I bring to a team
           </div>
           <h2 className="font-heading font-bold text-[clamp(30px,4.2vw,44px)] tracking-[-0.02em] m-0 mb-4">
@@ -27,13 +27,16 @@ export default function Skills({ skills }: { skills: SiteContent["skills"] }) {
               <div className="font-heading font-semibold text-[19px] text-accent mb-[18px]">
                 {cat.title}
               </div>
-              <div className="flex flex-wrap gap-2">
-                {cat.items.map((item) => (
-                  <span
-                    key={item}
-                    className="font-mono text-[12px] font-medium border border-paper/[0.24] rounded-chip px-[10px] py-[5px]"
-                  >
+              {/* Plain list: no chips, separated by a middot. */}
+              <div className="flex flex-wrap items-center gap-y-1">
+                {cat.items.map((item, idx) => (
+                  <span key={item} className="font-label text-[12px] font-medium">
                     {item}
+                    {idx < cat.items.length - 1 && (
+                      <span aria-hidden="true" className="mx-2 text-paper/40">
+                        ·
+                      </span>
+                    )}
                   </span>
                 ))}
               </div>

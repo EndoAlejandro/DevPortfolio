@@ -26,7 +26,7 @@ export default function CoverImage({
     );
   }
   return (
-    <span className="font-mono text-[11px] text-ink/40 uppercase tracking-[0.1em] px-4 text-center">
+    <span className="font-label text-[11px] text-ink/40 uppercase tracking-[0.1em] px-4 text-center">
       {alt}
     </span>
   );

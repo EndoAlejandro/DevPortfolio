@@ -55,12 +55,12 @@ export default async function StudioPage({
             <span className="font-heading font-bold text-[20px] tracking-[-0.02em]">
               lost medium
             </span>
-            <span className="font-mono text-[11px] uppercase tracking-[0.24em] text-ink/50">
+            <span className="font-label text-[11px] uppercase tracking-[0.24em] text-ink/50">
               studios
             </span>
           </div>
           {/* Language toggle */}
-          <div className="flex items-center gap-2 font-mono text-[12px] font-medium uppercase tracking-[0.08em]">
+          <div className="flex items-center gap-2 font-label text-[12px] font-medium uppercase tracking-[0.08em]">
             {langLink("en", "EN")}
             <span className="text-ink/25">/</span>
             {langLink("es", "ES")}
@@ -68,7 +68,7 @@ export default async function StudioPage({
         </div>
 
         <div className="mt-20 md:mt-28">
-          <div className="font-mono text-[13px] font-medium uppercase tracking-[0.16em] text-ink mb-5">
+          <div className="font-label text-[13px] font-medium uppercase tracking-[0.16em] text-ink mb-5">
             {s.label}
           </div>
           <h1 className="font-heading font-bold uppercase text-accent text-[clamp(56px,13vw,150px)] leading-[0.88] tracking-[-0.02em] m-0">
@@ -84,7 +84,7 @@ export default async function StudioPage({
 
         <div className="border-t border-line my-9" />
 
-        <div className="flex justify-between flex-wrap gap-4 font-mono text-[12px] font-medium uppercase tracking-[0.08em] text-ink/70">
+        <div className="flex justify-between flex-wrap gap-4 font-label text-[12px] font-medium uppercase tracking-[0.08em] text-ink/70">
           <span>
             {s.founded} · {s.location}
           </span>
@@ -106,7 +106,7 @@ export default async function StudioPage({
 
       {/* TEAM */}
       <section className="max-w-[1180px] mx-auto px-7 py-14">
-        <div className="font-mono text-[12px] font-medium tracking-[0.16em] uppercase text-accent mb-8">
+        <div className="font-label text-[12px] font-medium tracking-[0.16em] uppercase text-accent mb-8">
           {s.teamHeading}
         </div>
         <div className="grid grid-cols-[repeat(auto-fit,minmax(200px,1fr))] gap-7">
@@ -120,7 +120,7 @@ export default async function StudioPage({
               <div className="font-heading font-semibold text-[19px] tracking-[-0.01em]">
                 {m.name}
               </div>
-              <div className="font-mono text-[11.5px] font-medium uppercase tracking-[0.04em] text-ink/55 mt-1">
+              <div className="font-label text-[11.5px] font-medium uppercase tracking-[0.04em] text-ink/55 mt-1">
                 {m.role}
               </div>
             </div>
@@ -130,7 +130,7 @@ export default async function StudioPage({
 
       {/* GAMES */}
       <section className="max-w-[1180px] mx-auto px-7 pb-24">
-        <div className="font-mono text-[12px] font-medium tracking-[0.16em] uppercase text-accent mb-8">
+        <div className="font-label text-[12px] font-medium tracking-[0.16em] uppercase text-accent mb-8">
           {s.gamesHeading}
         </div>
 

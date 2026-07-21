@@ -16,10 +16,10 @@ export default function Factsheet({ rows }: { rows: FactRow[] }) {
     <dl className="border-t border-line m-0">
       {rows.map((row) => (
         <div key={row.label} className="py-3 border-b border-line">
-          <dt className="font-mono text-[10.5px] font-medium uppercase tracking-[0.08em] text-ink/45">
+          <dt className="font-label text-[10.5px] font-medium uppercase tracking-[0.08em] text-ink/45">
             {row.label}
           </dt>
-          <dd className="font-mono text-[13px] text-ink m-0 mt-1">{row.value}</dd>
+          <dd className="font-label text-[13px] text-ink m-0 mt-1">{row.value}</dd>
         </div>
       ))}
     </dl>

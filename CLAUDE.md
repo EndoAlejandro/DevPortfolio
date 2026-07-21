@@ -28,7 +28,8 @@ Built by someone with limited front-end experience — favor clarity over clever
 - Colors: paper `#EEEEEE` (page bg), ink `#1A1A1A` (text + dark sections), accent raspberry `#CB2957`, card `#FCFCFC`, hairline border `#DDDDDD`.
 - **Tailwind v4: design tokens live in `app/globals.css` inside `@theme { ... }`** (there is no `tailwind.config.ts`). Change colors/shadows/radii there, not inline. Tokens become utilities like `bg-paper`, `text-ink`, `text-accent`, `shadow-soft`, `border-line`.
 - Signature look: clean/editorial — thin `1px #DDDDDD` borders, soft shadows (`0 8px 26px rgba(0,0,0,.06)`), rounded corners 9–22px, subtle hovers (opacity / translateY). Dark sections (hero, skills, footer) flip to ink bg with paper text.
-- Fonts: Space Grotesk (headings/UI), JetBrains Mono (labels/tags/meta), Mulish (body) — loaded via `next/font/google` in `app/layout.tsx` as CSS variables.
+- Fonts: Stack Sans Headline (`font-heading` — headings/UI), Google Sans Flex (`font-label` — labels, tags, meta lines), Mulish (body), JetBrains Mono (`font-mono` — Markdown code blocks only). Loaded via `next/font/google` in `app/layout.tsx` as CSS variables. (The mockups still show Space Grotesk + JetBrains Mono everywhere; the site has moved on.)
+- NOTE: editing `@theme` tokens in `app/globals.css` can leave the dev server serving stale CSS even across a restart — if a token change doesn't show up, delete `.next` and restart.
 - NOTE: the older `mockups/index.clean.html` / `blog.clean.html` (cream + forest, thick borders, hard shadows) are superseded — do not use them.
 
 ## Key rules

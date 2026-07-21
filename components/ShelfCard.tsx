@@ -18,14 +18,9 @@ export default function ShelfCard({ project }: { project: Project }) {
         />
       </div>
       <div className="px-[19px] pt-[17px] pb-[19px]">
-        <div className="font-heading font-semibold text-[19px] tracking-[-0.01em] mb-[5px]">
+        <div className="font-heading font-semibold text-[19px] tracking-[-0.01em]">
           {project.title}
         </div>
-        {project.role && (
-          <div className="font-mono text-[11px] font-medium uppercase tracking-[0.04em] text-ink/55">
-            {project.role}
-          </div>
-        )}
       </div>
     </Link>
   );

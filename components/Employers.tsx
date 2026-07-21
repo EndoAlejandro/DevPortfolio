@@ -17,7 +17,7 @@ export default function Employers({
   return (
     <section className="max-w-[1180px] mx-auto px-7 pt-8 pb-16">
       <Reveal className="mb-8">
-        <div className="font-mono text-[12px] font-medium tracking-[0.16em] uppercase text-accent mb-3">
+        <div className="font-label text-[12px] font-medium tracking-[0.16em] uppercase text-accent mb-3">
           {employers.heading}
         </div>
         {employers.subcopy && (
@@ -57,7 +57,7 @@ export default function Employers({
 
       {hovered && (
         <div
-          className="fixed z-50 pointer-events-none font-mono text-[12px] bg-ink text-paper rounded px-2 py-1 whitespace-nowrap"
+          className="fixed z-50 pointer-events-none font-label text-[12px] bg-ink text-paper rounded px-2 py-1 whitespace-nowrap"
           style={{ left: pos.x + 14, top: pos.y + 16 }}
         >
           {hovered}

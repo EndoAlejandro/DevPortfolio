@@ -1,5 +1,10 @@
 import type { Metadata } from "next";
-import { Space_Grotesk, JetBrains_Mono, Mulish } from "next/font/google";
+import {
+  Stack_Sans_Headline,
+  Google_Sans_Flex,
+  JetBrains_Mono,
+  Mulish,
+} from "next/font/google";
 import "./globals.css";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
@@ -8,14 +13,19 @@ import Footer from "@/components/Footer";
 // To restyle: swap any of these for another next/font/google family and
 // update the matching --font-* token in app/globals.css (@theme).
 
-// Headings + UI
-const spaceGrotesk = Space_Grotesk({
-  variable: "--font-space-grotesk",
+// Headings + UI (variable font, 200-700 weight axis)
+const stackSansHeadline = Stack_Sans_Headline({
+  variable: "--font-heading-family",
   subsets: ["latin"],
-  weight: ["500", "600", "700"],
 });
 
-// Labels, tags, meta text
+// Labels, tags, meta text (font-label utility)
+const googleSansFlex = Google_Sans_Flex({
+  variable: "--font-label-family",
+  subsets: ["latin"],
+});
+
+// Code blocks and inline code in Markdown posts (font-mono utility)
 const jetbrainsMono = JetBrains_Mono({
   variable: "--font-jetbrains",
   subsets: ["latin"],
@@ -42,7 +52,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${spaceGrotesk.variable} ${jetbrainsMono.variable} ${mulish.variable}`}
+      className={`${stackSansHeadline.variable} ${googleSansFlex.variable} ${jetbrainsMono.variable} ${mulish.variable}`}
     >
       <body className="min-h-screen">
         <Nav />

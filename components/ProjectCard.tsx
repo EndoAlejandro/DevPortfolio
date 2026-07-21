@@ -2,6 +2,7 @@ import Link from "next/link";
 import type { Project } from "@/lib/types";
 import TagPill from "./TagPill";
 import CoverImage from "./CoverImage";
+import { pageLabel, playLabel } from "@/lib/links";
 
 // Large "Selected games" card. Alternates image side by index parity.
 export default function ProjectCard({
@@ -11,20 +12,20 @@ export default function ProjectCard({
   project: Project;
   imageRight?: boolean;
 }) {
-  const { title, genre, role, summary, tags, links, slug, cover } = project;
+  const { title, genre, summary, tags, links, slug, cover } = project;
 
   const imageCol = (
+    // aspect-ratio only kicks in when the column wraps onto its own line; side by
+    // side the flex row stretches it to the (taller) text column's height.
     <div
-      className={`flex-1 basis-[420px] min-w-[300px] ${imageRight ? "border-l border-line" : ""}`}
+      className={`relative flex-1 basis-[420px] min-w-[300px] aspect-[16/10] bg-[#DDDDDD] grid place-items-center overflow-hidden ${imageRight ? "border-l border-line" : ""}`}
     >
-      <div className="relative w-full aspect-[16/10] bg-[#DDDDDD] grid place-items-center overflow-hidden">
-        <CoverImage
-          src={cover}
-          alt={title}
-          sizes="(max-width: 768px) 100vw, 50vw"
-          className="transition-transform duration-500 group-hover:scale-[1.04]"
-        />
-      </div>
+      <CoverImage
+        src={cover}
+        alt={title}
+        sizes="(max-width: 768px) 100vw, 50vw"
+        className="transition-transform duration-500 group-hover:scale-[1.04]"
+      />
     </div>
   );
 
@@ -41,12 +42,6 @@ export default function ProjectCard({
         </Link>
         {genre && <TagPill variant="genre">{genre}</TagPill>}
       </div>
-
-      {role && (
-        <div className="font-mono text-[11.5px] font-medium tracking-[0.05em] text-ink/50 uppercase mb-4">
-          {role}
-        </div>
-      )}
 
       <p className="text-[15px] leading-[1.62] text-ink/[0.78] mb-[22px]">
         {summary}
@@ -68,7 +63,7 @@ export default function ProjectCard({
             rel="noopener noreferrer"
             className="font-heading font-semibold text-[14px] text-paper bg-ink rounded-badge px-[18px] py-[10px] no-underline transition-opacity hover:opacity-85"
           >
-            Play in browser
+            {playLabel(links)}
           </a>
         )}
         {links?.page && (
@@ -76,9 +71,9 @@ export default function ProjectCard({
             href={links.page}
             target="_blank"
             rel="noopener noreferrer"
-            className="font-mono font-medium text-[12.5px] text-ink no-underline border-b-[1.5px] border-accent pb-[2px]"
+            className="font-label font-medium text-[12.5px] text-ink no-underline border-b-[1.5px] border-accent pb-[2px]"
           >
-            View page ↗
+            {pageLabel(links)} ↗
           </a>
         )}
       </div>

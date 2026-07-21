@@ -45,13 +45,13 @@ export default async function PostPage({
     <main className="max-w-[760px] mx-auto px-7 pt-16 pb-24">
       <Link
         href="/blog"
-        className="font-mono text-[12px] font-medium text-ink/55 no-underline hover:text-accent transition-colors"
+        className="font-label text-[12px] font-medium text-ink/55 no-underline hover:text-accent transition-colors"
       >
         ← Back to the devlog
       </Link>
 
       <article className="mt-8">
-        <div className="font-mono text-[12px] font-medium uppercase tracking-[0.05em] text-ink/50 mb-4">
+        <div className="font-label text-[12px] font-medium uppercase tracking-[0.05em] text-ink/50 mb-4">
           {monthYear(post.date)} · {post.readingTime}
         </div>
         <h1 className="font-heading font-bold text-[clamp(30px,5vw,46px)] leading-[1.05] tracking-[-0.02em] m-0 mb-5">

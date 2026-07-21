@@ -21,7 +21,7 @@ export default function TagPill({
   const padding = variant === "genre" ? "px-[9px] py-[3px]" : "px-[10px] py-[4px]";
   return (
     <span
-      className={`inline-block font-mono text-[11px] font-medium uppercase rounded-chip ${padding} ${variantClasses[variant]} ${className}`}
+      className={`inline-block font-label text-[11px] font-medium uppercase rounded-chip ${padding} ${variantClasses[variant]} ${className}`}
     >
       {children}
     </span>

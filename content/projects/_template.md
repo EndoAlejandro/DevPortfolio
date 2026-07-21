@@ -23,9 +23,11 @@ gallery:                                        # optional extra screenshots
   - "/images/projects/game-title-01.jpg"
   - "/images/projects/game-title-02.jpg"
 links:
-  play: "https://alejandroendo.itch.io/game-title"   # "Play in browser"
-  page: "https://alejandroendo.itch.io/game-title"   # "View on itch.io"
+  play: "https://alejandroendo.itch.io/game-title"   # primary button
+  page: "https://alejandroendo.itch.io/game-title"   # secondary link
   source: ""                                          # optional repo link
+  playLabel: ""   # optional — button text; auto-derived from the host otherwise
+  pageLabel: ""   # optional — secondary link text
 featured: true                # optional homepage highlight flag
 # --- Factsheet (project page) — all optional, blank rows are hidden ---
 platform: "Web · itch.io"     # optional — e.g. "Android · Google Play"

@@ -16,19 +16,15 @@
     "categories": [
       {
         "title": "Engine",
-        "items": ["Unity", "Godot", "XR Toolkit", "Meta Quest SDK", "Android"]
+        "items": ["Unity", "Godot", "WebGl", "Meta Quest SDK"]
       },
       {
         "title": "Code",
-        "items": ["C#", "GDScript", "Shader Graph", "Git", "Design patterns"]
+        "items": ["C#", "GDScript", "Shader Graph", "Design patterns"]
       },
       {
-        "title": "Disciplines",
-        "items": ["Gameplay", "Systems", "VR / XR", "Mobile", "Proc-gen"]
-      },
-      {
-        "title": "Craft",
-        "items": ["Game feel", "Prototyping", "UX", "Visual polish"]
+        "title": "Game Design",
+        "items": ["Gameplay", "Systems", "Game Feel", "GDD"]
       }
     ]
   },
@@ -40,17 +36,18 @@
     ],
     "stats": [
       { "sinceYear": 2020, "label": "Years in software" },
-      { "sinceYear": 2022, "label": "Years in Unity / VR" },
-      { "value": "7", "label": "Games shipped" }
+      { "sinceYear": 2022, "label": "Years in Unity / VR" }
     ]
   },
   "employers": {
     "heading": "Where I've worked",
     "subcopy": "Teams and clients I've built software and interactive experiences for.",
     "items": [
+      { "name": "Lost Medium", "logo": "/images/site/lost-medium.png" },
       { "name": "Bacon Games", "logo": "/images/site/bacon-games.png" },
       { "name": "Electronic Arts", "logo": "/images/site/electronic-art.svg" },
       { "name": "DeJusticia", "logo": "/images/site/dejusticia.svg" },
+      { "name": "Universidad Icesi", "logo": "/images/site/icesi.png" },
       { "name": "Alternova", "logo": "/images/site/alternova.png" },
       { "name": "Carvajal", "logo": "/images/site/carvajal.png" }
     ]
@@ -94,16 +91,17 @@
   },
   "contact": {
     "heading": "Need a solo dev who sweats the game feel?",
-    "subcopy": "I'm open to gameplay, systems, VR and mobile roles — remote or relocating. Let's make something that feels great to play.",
+    "subcopy": "I'm open to work remote or relocating. Let's make something that feels great to play.",
     "primary": {
       "label": "Message me on LinkedIn",
       "href": "https://www.linkedin.com/in/alejandro-endo-5b5636129/",
       "external": true
     },
     "resumeHref": "/cv/alejandro-endo-cv.pdf",
+    "email": "alejoendo@hotmail.com",
     "socials": [
       { "label": "itch.io", "href": "https://alejandroendo.itch.io/", "external": true },
-      { "label": "Google Play", "href": "#", "external": true },
+      { "label": "Google Play", "href": "https://play.google.com/store/apps/developer?id=Lost+Medium", "external": true },
       { "label": "LinkedIn", "href": "https://www.linkedin.com/in/alejandro-endo-5b5636129/", "external": true }
     ]
   }

@@ -6,12 +6,19 @@
 export type ProjectCategory = "selected" | "shelf";
 
 export interface ProjectLinks {
-  /** itch.io "Play in browser" link. */
+  /** Primary link — where people go to play/get the game. */
   play?: string;
-  /** itch.io page ("View page ↗"). */
+  /** Secondary link — the game's listing page. */
   page?: string;
   /** Optional source repo. */
   source?: string;
+  /**
+   * Button text overrides. When omitted, the label is derived from the link's
+   * host (itch.io → "Play in browser", Google Play → "Get it on Google Play",
+   * ...) by lib/links.ts. Set these when the default doesn't fit.
+   */
+  playLabel?: string;
+  pageLabel?: string;
 }
 
 /** A game/project. One Markdown file per project in content/projects/. */
@@ -172,6 +179,8 @@ export interface SiteContent {
     /** Primary CTA (e.g. LinkedIn message). */
     primary: SiteLink;
     resumeHref: string;
+    /** Optional public email — rendered as a mailto line when set. */
+    email?: string;
     socials: SiteLink[];
   };
 }

@@ -31,7 +31,7 @@ export default async function Home() {
       >
         <Reveal className="flex items-end justify-between gap-5 flex-wrap mb-11">
           <div>
-            <div className="font-mono text-[12px] font-medium tracking-[0.16em] uppercase text-accent mb-3">
+            <div className="font-label text-[12px] font-medium tracking-[0.16em] uppercase text-accent mb-3">
               Selected games
             </div>
             <h2 className="font-heading font-bold text-[clamp(30px,4.2vw,44px)] tracking-[-0.02em] m-0">
@@ -40,7 +40,7 @@ export default async function Home() {
           </div>
           <Link
             href="/games"
-            className="font-mono text-[12px] font-medium text-ink/55 no-underline hover:text-accent transition-colors"
+            className="font-label text-[12px] font-medium text-ink/55 no-underline hover:text-accent transition-colors"
           >
             View all games →
           </Link>
@@ -59,7 +59,7 @@ export default async function Home() {
       <section className="max-w-[1180px] mx-auto px-7 pt-[62px] pb-11">
         <Reveal className="flex items-end justify-between gap-5 flex-wrap mb-9">
           <div>
-            <div className="font-mono text-[12px] font-medium tracking-[0.16em] uppercase text-accent mb-3">
+            <div className="font-label text-[12px] font-medium tracking-[0.16em] uppercase text-accent mb-3">
               More from the shelf
             </div>
             <h2 className="font-heading font-bold text-[clamp(28px,3.6vw,38px)] tracking-[-0.02em] m-0">
@@ -68,7 +68,7 @@ export default async function Home() {
           </div>
           <Link
             href="/games"
-            className="font-mono text-[12px] font-medium text-ink/55 no-underline hover:text-accent transition-colors"
+            className="font-label text-[12px] font-medium text-ink/55 no-underline hover:text-accent transition-colors"
           >
             View all games →
           </Link>

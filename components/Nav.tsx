@@ -42,7 +42,7 @@ export default function Nav() {
 
         {/* Nav links + CTA */}
         <div className="flex items-center gap-5 flex-wrap justify-end">
-          <div className="flex gap-5 font-mono text-[12.5px] font-medium uppercase tracking-[0.06em]">
+          <div className="flex gap-5 font-label text-[12.5px] font-medium uppercase tracking-[0.06em]">
             {links.map((link) => (
               <Link
                 key={link.href}

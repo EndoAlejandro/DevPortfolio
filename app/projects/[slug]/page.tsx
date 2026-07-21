@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import { getAllProjects, getProjectBySlug, getSite } from "@/lib/content";
 import { youtubeEmbedUrl, youtubeThumbnail } from "@/lib/youtube";
+import { pageLabel, playLabel } from "@/lib/links";
 import MarkdownBody from "@/components/MarkdownBody";
 import TagPill from "@/components/TagPill";
 import CoverImage from "@/components/CoverImage";
@@ -42,7 +43,7 @@ export async function generateMetadata({
 /** Small mono section label with an accent tick — astero's core device. */
 function SectionLabel({ children }: { children: ReactNode }) {
   return (
-    <div className="flex items-center gap-2 font-mono text-[12px] font-medium uppercase tracking-[0.1em] text-ink/45 mb-5">
+    <div className="flex items-center gap-2 font-label text-[12px] font-medium uppercase tracking-[0.1em] text-ink/45 mb-5">
       <span className="inline-block w-4 h-px bg-accent" />
       {children}
     </div>
@@ -88,14 +89,14 @@ export default async function ProjectPage({
     <main className="max-w-[1000px] mx-auto px-7 pt-16 pb-24">
       <Link
         href="/#work"
-        className="font-mono text-[12px] font-medium text-ink/55 no-underline hover:text-accent transition-colors"
+        className="font-label text-[12px] font-medium text-ink/55 no-underline hover:text-accent transition-colors"
       >
         ← Back to work
       </Link>
 
       {/* Hero */}
       <header className="mt-8 mb-10">
-        <div className="font-mono text-[12px] font-medium uppercase tracking-[0.12em] text-accent mb-3">
+        <div className="font-label text-[12px] font-medium uppercase tracking-[0.12em] text-accent mb-3">
           {project.studio ? "Lost Medium Games" : "Alejandro Endo"}
         </div>
 
@@ -115,12 +116,12 @@ export default async function ProjectPage({
         {(project.status || project.role) && (
           <div className="flex items-center gap-3 flex-wrap mb-6">
             {project.status && (
-              <span className="inline-block font-mono text-[11px] font-medium uppercase tracking-[0.05em] bg-accent text-ink rounded-badge px-[9px] py-[4px]">
+              <span className="inline-block font-label text-[11px] font-medium uppercase tracking-[0.05em] bg-accent text-ink rounded-badge px-[9px] py-[4px]">
                 {project.status}
               </span>
             )}
             {project.role && (
-              <span className="font-mono text-[12px] font-medium tracking-[0.05em] text-ink/50 uppercase">
+              <span className="font-label text-[12px] font-medium tracking-[0.05em] text-ink/50 uppercase">
                 {project.role}
               </span>
             )}
@@ -145,7 +146,7 @@ export default async function ProjectPage({
                 rel="noopener noreferrer"
                 className="font-heading font-semibold text-[15px] text-paper bg-ink rounded-btn px-6 py-3 no-underline transition-opacity hover:opacity-85"
               >
-                Play in browser
+                {playLabel(project.links)}
               </a>
             )}
             {project.links?.page && (
@@ -153,9 +154,9 @@ export default async function ProjectPage({
                 href={project.links.page}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="font-mono font-medium text-[13px] text-ink no-underline border-b-[1.5px] border-accent pb-[2px]"
+                className="font-label font-medium text-[13px] text-ink no-underline border-b-[1.5px] border-accent pb-[2px]"
               >
-                View on itch.io ↗
+                {pageLabel(project.links)} ↗
               </a>
             )}
             {project.links?.source && (
@@ -163,7 +164,7 @@ export default async function ProjectPage({
                 href={project.links.source}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="font-mono font-medium text-[13px] text-ink no-underline border-b-[1.5px] border-accent pb-[2px]"
+                className="font-label font-medium text-[13px] text-ink no-underline border-b-[1.5px] border-accent pb-[2px]"
               >
                 Source ↗
               </a>
@@ -222,7 +223,7 @@ export default async function ProjectPage({
                       </svg>
                     </span>
                   </span>
-                  <span className="absolute bottom-2 left-3 font-mono text-[10px] font-medium uppercase tracking-[0.08em] text-white/90">
+                  <span className="absolute bottom-2 left-3 font-label text-[10px] font-medium uppercase tracking-[0.08em] text-white/90">
                     Gameplay
                   </span>
                 </button>

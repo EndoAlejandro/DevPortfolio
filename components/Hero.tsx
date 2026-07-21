@@ -1,6 +1,9 @@
 import Link from "next/link";
 import type { SiteContent } from "@/lib/types";
 
+// TODO: re-enable the hero portrait once the photo is ready — flip this to true.
+const SHOW_PORTRAIT = false;
+
 export default function Hero({
   hero,
   stats,
@@ -19,7 +22,7 @@ export default function Hero({
         {/* Left column — copy */}
         <div className="flex-1 basis-[440px] min-w-[300px]">
           <div
-            className="rise font-mono text-[12px] font-medium tracking-[0.16em] uppercase text-accent mb-[26px]"
+            className="rise font-label text-[12px] font-medium tracking-[0.16em] uppercase text-accent mb-[26px]"
             style={{ animationDelay: "60ms" }}
           >
             {hero.badge}
@@ -44,7 +47,7 @@ export default function Hero({
             style={{ animationDelay: "240ms" }}
           >
             <Link
-              href="/#work"
+              href="/games"
               className="font-heading font-semibold text-[15px] text-paper bg-accent rounded-btn px-6 py-[13px] no-underline transition-opacity hover:opacity-[0.88]"
             >
               See my games →
@@ -59,7 +62,7 @@ export default function Hero({
           </div>
 
           <div
-            className="rise flex flex-wrap gap-[9px] font-mono text-[12px] font-medium tracking-[0.03em]"
+            className="rise flex flex-wrap gap-[9px] font-label text-[12px] font-medium tracking-[0.03em]"
             style={{ animationDelay: "300ms" }}
           >
             {hero.socials.map((s) => (
@@ -86,7 +89,7 @@ export default function Hero({
                     ? new Date().getFullYear() - stat.sinceYear
                     : stat.value}
                 </div>
-                <div className="font-mono text-[11px] font-medium uppercase text-paper/55 mt-[6px] tracking-[0.04em]">
+                <div className="font-label text-[11px] font-medium uppercase text-paper/55 mt-[6px] tracking-[0.04em]">
                   {stat.label}
                 </div>
               </div>
@@ -94,20 +97,22 @@ export default function Hero({
           </div>
         </div>
 
-        {/* Right column — portrait with accent offset square */}
-        <div
-          className="rise flex-[0_1_340px] min-w-[260px] flex justify-center relative"
-          style={{ animationDelay: "380ms" }}
-        >
-          <div className="relative w-[300px] h-[300px]">
-            <div className="absolute top-4 left-4 w-[300px] h-[300px] rounded-card-xl bg-accent" />
-            <div className="relative w-[300px] h-[300px] rounded-card-xl border border-black/15 bg-[#DDDDDD] grid place-items-center overflow-hidden">
-              <span className="font-mono text-[11px] text-ink/40 uppercase tracking-[0.1em]">
-                Portrait
-              </span>
+        {/* Right column — portrait with accent offset square (hidden, see TODO above) */}
+        {SHOW_PORTRAIT && (
+          <div
+            className="rise flex-[0_1_340px] min-w-[260px] flex justify-center relative"
+            style={{ animationDelay: "380ms" }}
+          >
+            <div className="relative w-[300px] h-[300px]">
+              <div className="absolute top-4 left-4 w-[300px] h-[300px] rounded-card-xl bg-accent" />
+              <div className="relative w-[300px] h-[300px] rounded-card-xl border border-black/15 bg-[#DDDDDD] grid place-items-center overflow-hidden">
+                <span className="font-label text-[11px] text-ink/40 uppercase tracking-[0.1em]">
+                  Portrait
+                </span>
+              </div>
             </div>
           </div>
-        </div>
+        )}
       </div>
     </header>
   );

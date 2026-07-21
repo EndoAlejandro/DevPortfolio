@@ -22,7 +22,7 @@ export default function GameCard({ project }: { project: Project }) {
           {project.title}
         </div>
         {project.role && (
-          <div className="font-mono text-[11px] font-medium uppercase tracking-[0.04em] text-ink/55">
+          <div className="font-label text-[11px] font-medium uppercase tracking-[0.04em] text-ink/55">
             {project.role}
           </div>
         )}

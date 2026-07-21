@@ -22,7 +22,7 @@ export default async function GamesPage() {
   return (
     <main className="max-w-[1180px] mx-auto px-7 pt-[74px] pb-24">
       <Reveal className="mb-10 max-w-[720px]">
-        <div className="font-mono text-[12px] font-medium tracking-[0.16em] uppercase text-accent mb-3">
+        <div className="font-label text-[12px] font-medium tracking-[0.16em] uppercase text-accent mb-3">
           All games
         </div>
         <h1 className="font-heading font-bold text-[clamp(38px,6vw,64px)] leading-[1.0] tracking-[-0.025em] m-0 mb-4">

@@ -47,7 +47,10 @@
   /* ============================================================
      FONTS — swap the family in app/layout.tsx; keep names in sync.
      ============================================================ */
-  --font-heading: var(--font-space-grotesk), system-ui, sans-serif;
+  --font-heading: var(--font-heading-family), system-ui, sans-serif;
+  /* Small UI text: labels, tags, meta lines, eyebrows. */
+  --font-label: var(--font-label-family), system-ui, sans-serif;
+  /* Code only (Markdown `code` / `pre`) — keep this monospaced. */
   --font-mono: var(--font-jetbrains), ui-monospace, monospace;
   --font-body: var(--font-mulish), system-ui, sans-serif;
 }
@@ -259,7 +262,7 @@ body {
   margin: 0;
 }
 .markdown figcaption {
-  font-family: var(--font-mono);
+  font-family: var(--font-label);
   font-size: 0.8em;
   color: color-mix(in srgb, var(--color-ink) 55%, transparent);
   text-align: center;

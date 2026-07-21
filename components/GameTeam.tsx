@@ -25,7 +25,7 @@ export default function GameTeam({ members }: { members: StudioMember[] }) {
           key={member.name}
           className="flex items-center gap-3 bg-card border border-line rounded-card px-3 py-[10px]"
         >
-          <div className="shrink-0 grid place-items-center w-9 h-9 rounded-badge overflow-hidden bg-ink text-paper font-mono text-[12px] font-medium">
+          <div className="shrink-0 grid place-items-center w-9 h-9 rounded-badge overflow-hidden bg-ink text-paper font-label text-[12px] font-medium">
             {member.photo ? (
               /* eslint-disable-next-line @next/next/no-img-element */
               <img
@@ -41,7 +41,7 @@ export default function GameTeam({ members }: { members: StudioMember[] }) {
             <div className="font-heading font-semibold text-[13.5px] text-ink leading-tight truncate">
               {member.name}
             </div>
-            <div className="font-mono text-[10px] font-medium uppercase tracking-[0.04em] text-ink/50 mt-[3px] truncate">
+            <div className="font-label text-[10px] font-medium uppercase tracking-[0.04em] text-ink/50 mt-[3px] truncate">
               {member.role}
             </div>
             {member.bio && (

@@ -15,7 +15,7 @@ export default function Devlog({ posts }: { posts: Post[] }) {
     >
       <Reveal className="flex items-end justify-between gap-5 flex-wrap mb-8">
         <div>
-          <div className="font-mono text-[12px] font-medium tracking-[0.16em] uppercase text-accent mb-3">
+          <div className="font-label text-[12px] font-medium tracking-[0.16em] uppercase text-accent mb-3">
             Devlog
           </div>
           <h2 className="font-heading font-bold text-[clamp(28px,3.6vw,38px)] tracking-[-0.02em] m-0">
@@ -24,7 +24,7 @@ export default function Devlog({ posts }: { posts: Post[] }) {
         </div>
         <Link
           href="/blog"
-          className="font-mono text-[12px] font-medium text-ink/55 no-underline hover:text-accent transition-colors"
+          className="font-label text-[12px] font-medium text-ink/55 no-underline hover:text-accent transition-colors"
         >
           View all posts →
         </Link>
@@ -40,14 +40,14 @@ export default function Devlog({ posts }: { posts: Post[] }) {
             }`}
           >
             <div className="flex items-baseline gap-[22px] flex-1 basis-[320px] min-w-0">
-              <span className="font-mono text-[12px] font-medium text-accent shrink-0 w-[60px]">
+              <span className="font-label text-[12px] font-medium text-accent shrink-0 w-[60px]">
                 {shortDate(post.date)}
               </span>
               <span className="font-heading font-semibold text-[18px] text-ink tracking-[-0.01em]">
                 {post.title}
               </span>
             </div>
-            <span className="font-mono text-[12px] font-medium text-ink/45 shrink-0">
+            <span className="font-label text-[12px] font-medium text-ink/45 shrink-0">
               {post.readingTime} →
             </span>
           </Link>
