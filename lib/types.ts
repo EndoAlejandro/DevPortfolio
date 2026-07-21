@@ -23,10 +23,30 @@ export interface Project {
   genre?: string;
   /** Free-text credit line, e.g. "Solo · Unity · Play free in browser". */
   role?: string;
+  /** Short punchy hero line under the title, e.g. "Race the clock. Rule the streets.". */
+  tagline?: string;
+  /** Hero status badge, e.g. "Available now", "In development". */
+  status?: string;
+  /** Factsheet platform value, e.g. "Web · itch.io", "Android · Google Play". */
+  platform?: string;
+  /** Factsheet engine value; the project page defaults to "Unity" when absent. */
+  engine?: string;
+  /** Factsheet release value (full date ok); falls back to `year` when absent. */
+  releaseDate?: string;
+  /** Factsheet developer override; the project page defaults to "Alejandro Endo". */
+  developer?: string;
+  /** Factsheet client value for commissioned/freelance work, e.g. "DeJusticia". */
+  client?: string;
   summary: string;
   tags: string[];
   /** true = credited to Lost Medium Games → also shows on /studio. */
   studio: boolean;
+  /**
+   * Per-project credits shown in the page's Team section. When omitted, the
+   * page falls back to the Lost Medium roster (studio games) or just Alejandro
+   * (solo work). Reuses StudioMember (name/role, optional photo/bio).
+   */
+  team?: StudioMember[];
   /** Which homepage section: big "Selected games" vs compact "shelf" grid. */
   category: ProjectCategory;
   /** Cover image path under /public, e.g. "/images/projects/foo-cover.jpg". */
@@ -77,7 +97,10 @@ export interface SkillCategory {
 }
 
 export interface SiteStat {
-  value: string;
+  /** Static value. Ignored when `sinceYear` is set (value is computed as years since then). */
+  value?: string;
+  /** When set, the stat value becomes the whole-year difference between this year and today. */
+  sinceYear?: number;
   label: string;
 }
 
@@ -93,6 +116,8 @@ export interface StudioMember {
   role: string;
   /** Optional avatar image path under /public. */
   photo?: string;
+  /** Optional one-line bio shown on the project-page team cards. */
+  bio?: string;
 }
 
 export type StudioLang = "en" | "es";

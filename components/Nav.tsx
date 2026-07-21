@@ -34,13 +34,9 @@ export default function Nav() {
       <div className="max-w-[1180px] mx-auto px-7 py-[15px] flex items-center justify-between gap-6">
         {/* Logo — Alejandro Endo monogram + wordmark */}
         <Link href="/" className="flex items-center gap-[11px] no-underline">
-          <span className="w-[34px] h-[34px] rounded-badge bg-accent grid place-items-center">
-            <span className="font-heading font-bold text-paper text-[16px] leading-none">
-              ae
-            </span>
-          </span>
+          
           <span className="font-heading font-bold text-[19px] tracking-[-0.01em] text-ink">
-            alejandro <span className="text-accent">endo</span>
+            Alejandro <span className="text-accent">Endo</span>
           </span>
         </Link>
 
@@ -61,7 +57,7 @@ export default function Nav() {
             href="/studio"
             className="font-heading font-semibold text-[14px] text-paper bg-accent rounded-badge px-[18px] py-[9px] no-underline transition-opacity hover:opacity-85"
           >
-            Studio
+            Game Studio
           </Link>
         </div>
       </div>

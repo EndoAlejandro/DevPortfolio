@@ -2,11 +2,18 @@
 title: "Game title"
 slug: "game-title"            # MUST match the filename (no leading _)
 year: 2026                    # optional — shown on the project page
-genre: "Survival"             # optional — shown as a badge
-role: "Solo · Unity · Play free in browser"   # optional credit line
+genre: "Survival"             # optional — shown as a badge + factsheet Genre row
+role: "Solo · Unity · Play free in browser"   # optional credit line (hero)
+tagline: "One short, punchy line."             # optional — hero line under the title
+status: "Available now"        # optional — hero badge (e.g. "In development")
 summary: "One or two sentences shown on the card and at the top of the page."
 tags: ["Design", "Code", "Game feel"]         # small chips
 studio: false                 # true = credited to Lost Medium Games, also shows on /studio
+team:                         # optional — credits for the page's Team section
+  - name: "Alejandro Endo"    #   omit to fall back to the Lost Medium roster
+    role: "Design & Code"     #   (studio games) or just Alejandro (solo work)
+  - name: "Collaborator"
+    role: "Art & Audio"
 category: "selected"          # "selected" = big homepage cards · "shelf" = compact grid
 order: 1                      # lower = appears first within its section
 cover: "/images/projects/game-title.jpg"      # key art (put file in public/)
@@ -20,6 +27,12 @@ links:
   page: "https://alejandroendo.itch.io/game-title"   # "View on itch.io"
   source: ""                                          # optional repo link
 featured: true                # optional homepage highlight flag
+# --- Factsheet (project page) — all optional, blank rows are hidden ---
+platform: "Web · itch.io"     # optional — e.g. "Android · Google Play"
+engine: "Unity"               # optional — factsheet defaults to "Unity"
+releaseDate: "August 2024"    # optional — factsheet Release; falls back to `year`
+developer: "Alejandro Endo"   # optional — factsheet Developer override
+client: "DeJusticia"          # optional — factsheet Client (commissioned/freelance work)
 ---
 
 <!--

@@ -82,7 +82,9 @@ export default function Hero({
             {stats.map((stat) => (
               <div key={stat.label}>
                 <div className="font-heading font-bold text-[36px] text-accent leading-none">
-                  {stat.value}
+                  {stat.sinceYear != null
+                    ? new Date().getFullYear() - stat.sinceYear
+                    : stat.value}
                 </div>
                 <div className="font-mono text-[11px] font-medium uppercase text-paper/55 mt-[6px] tracking-[0.04em]">
                   {stat.label}

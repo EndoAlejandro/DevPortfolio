@@ -4,9 +4,18 @@ slug: "dark-havoc"
 year: 2024
 genre: "Roguelite"
 role: "Solo · Unity · Play free in browser"
+tagline: "Skill is the only progression system."
+status: "Play free"
+platform: "Web · itch.io"
+releaseDate: "2024"
 summary: "A 2D action roguelite with procedurally generated levels, modular enemy AI driven by per-enemy 'brain' state machines, and Dead Cells-inspired combo combat with a parry system. Multi-stage bosses, controller-first design."
 tags: ["Action", "Platformer", "Pixel Art", "Roguelite", "Procedural Generation", "Enemy AI", "Boss Design", "ShaderGraph", "Controller Support", "Game Feel"]
 studio: false
+team:
+  - name: "Alejandro Endo"
+    role: "Design, Code & Game Feel"
+  - name: "Penusbmic"
+    role: "Pixel Art"
 featured: true
 category: "selected"
 cover: "/images/projects/dark-havoc.jpeg"

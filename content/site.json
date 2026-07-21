@@ -1,26 +1,26 @@
 {
   "hero": {
-    "badge": "Solo game developer · VR & mobile · open to work",
+    "badge": "Game developer",
     "heading": "Designer by profession, game developer",
     "highlight": "by choice.",
-    "subcopy": "I'm Alejandro Endo - an interactive-media designer with 6 years in software and 3.5 focused on Unity. Since 2021 I've lived in VR, chasing the elusive craft of game feel across a shelf of solo-built games.",
+    "subcopy": "I'm Alejandro Endo. A software developer, with a background as an interactive-media designer. I've been building Games since 2021 and shipped several solo games, with studio and client work that includes Electronic Arts, Alternova, and Bacon Games. What I care about most is game feel — the gap between a build that works and one that's fun to hold.",
     "socials": [
       { "label": "itch.io", "href": "https://alejandroendo.itch.io/", "external": true },
-      { "label": "Google Play", "href": "#", "external": true },
+      { "label": "Google Play", "href": "https://play.google.com/store/apps/developer?id=Lost+Medium", "external": true },
       { "label": "LinkedIn", "href": "https://www.linkedin.com/in/alejandro-endo-5b5636129/", "external": true }
     ]
   },
   "skills": {
-    "heading": "A designer's eye and a developer's toolbox.",
-    "subcopy": "Shipping solo means I've owned the full loop — from prototype to feel. I can drop into gameplay or systems, work comfortably in VR and mobile, and sweat the last 10% that makes a build satisfying.",
+    "heading": "Director, designer, developer. Sometimes all three on the same project.",
+    "subcopy": "At Lost Medium Games We have set creative direction alongside the team, making design calls, aligning on what a project should feel like, then building my part of it in Unity. That range means I can slot into a team wherever the gap is: leading on direction, owning a design problem, or sitting in the code with the rest of the devs. I'm used to working across those roles with other people, not around them.",
     "categories": [
       {
-        "title": "Engine & XR",
-        "items": ["Unity", "XR Toolkit", "Meta Quest SDK", "Android"]
+        "title": "Engine",
+        "items": ["Unity", "Godot", "XR Toolkit", "Meta Quest SDK", "Android"]
       },
       {
         "title": "Code",
-        "items": ["C#", "Shader Graph", "Git", "Design patterns"]
+        "items": ["C#", "GDScript", "Shader Graph", "Git", "Design patterns"]
       },
       {
         "title": "Disciplines",
@@ -39,8 +39,8 @@
       "I recently graduated with honours from an MSc in Game Development at Universal Arts School, where I shipped several games as a solo developer. My goal is always the same: a final product that's captivating, satisfying, and genuinely enjoyable to play."
     ],
     "stats": [
-      { "value": "6", "label": "Years in software" },
-      { "value": "3.5", "label": "Years in Unity / VR" },
+      { "sinceYear": 2020, "label": "Years in software" },
+      { "sinceYear": 2022, "label": "Years in Unity / VR" },
       { "value": "7", "label": "Games shipped" }
     ]
   },
@@ -48,9 +48,10 @@
     "heading": "Where I've worked",
     "subcopy": "Teams and clients I've built software and interactive experiences for.",
     "items": [
-      { "name": "Alternova", "logo": "/images/site/alternova.png" },
       { "name": "Bacon Games", "logo": "/images/site/bacon-games.png" },
       { "name": "Electronic Arts", "logo": "/images/site/electronic-art.svg" },
+      { "name": "DeJusticia", "logo": "/images/site/dejusticia.svg" },
+      { "name": "Alternova", "logo": "/images/site/alternova.png" },
       { "name": "Carvajal", "logo": "/images/site/carvajal.png" }
     ]
   },

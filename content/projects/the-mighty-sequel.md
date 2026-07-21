@@ -3,9 +3,17 @@ title: "The Mighty Sequel"
 slug: "the-mighty-sequel"
 genre: "Platformer"
 role: "Platformer · Lost Medium Games"
+tagline: "A playground for movement and level-feel."
+status: "Play free"
+platform: "Web · itch.io"
 summary: "A tight little platformer made under the Lost Medium Games banner — a playground for movement and level-feel."
 tags: ["Design", "Code"]
 studio: true
+team:
+  - name: "Alejandro Endo"
+    role: "Design & Code"
+  - name: "Member Two"
+    role: "Art & Animation"
 category: "selected"
 order: 1
 cover: "/images/projects/the-mighty-sequel.jpg"
